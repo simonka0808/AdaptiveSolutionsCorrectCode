@@ -1,0 +1,98 @@
+body {
+    background-color: #f50004;
+}
+
+.register-container {
+    width: 100%;
+    margin-top: 100px;
+    
+}
+
+.register-form-row {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 3%;
+    padding: 20px;
+}
+
+.register-title-wrapper h1 {
+    color: #f50004;
+    font-weight: 600;
+    text-align: center;
+}
+
+.credentials-row {
+    margin: 0 auto;
+    /* width: 90vw; */
+    max-width: 1200px;
+
+}
+
+.emergency-contact-row {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 1200px;
+
+}
+
+#emergencyContact {
+    border-style: solid;
+    border-color: #f50004;
+    padding-bottom: 20px;
+
+}
+
+.emergency-details-header {
+    color: #f50004;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.password-row {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 1200px;
+    margin-bottom: 60px;
+}
+
+#createAccount {
+    background-color: #F9C013;
+    border-color: #F9C013;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.create-acc-btn-col {
+    text-align: center;
+}
+
+.haveAccount-col-btn {
+    text-align: center;
+}
+
+#haveAnAccBtn {
+    background-color: #F9C013;
+    border-color: #F9C013;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.dontHaveAnAcc{
+    background-color:#f50004;
+}
+
+.dontHaveAnAcc p{
+    text-align: end;
+}
+.dontHaveAnAcc-in-row{
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 1200px;
+}
+.login-logo img{
+    max-width: 70%;
+    height: auto;
+    float: middle;
+}

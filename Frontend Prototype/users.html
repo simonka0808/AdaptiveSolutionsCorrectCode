@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/users.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Search</title>
+    <link rel="stylesheet" href="css/events_page_admin.css">
+</head>
+
+<div class="container-navbar">
+    <div class="row">
+        <div class="col-8">
+            <!-- <img src="images/Denis Law's Streetsport Logo 2018 WB.jpg" alt="Italian Trulli" style="width:70%;height:70%;"> -->
+            <h1>Dennis Law Legacy Trust</h1>
+        </div>
+        <div class="col-2">
+            <a href="events_page_admin.html">
+                <h2>Events</h2>
+            </a>
+
+        </div>
+        <div class="col-2">
+            <a href="users.html">
+                <h2>Users</h2>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<body>
+   
+
+    <!-- Search bar for finding user details at top of page -->
+    <div class="searchBar">
+        <form>
+            <input type="text" class="form-control" id="searchInput" placeholder="Enter a name...">
+            <button type="submit" class="btn btn-light" id="searchButton" onClick="searchUsers()"> Search</button>
+        </form>
+    </div>
+
+
+    <!-- Blocks containing contact details for searched users -->
+    <div class="userDetails">
+        <!-- The user's name in white, against a red background -->
+        <div class="userDetailsHeader">
+            <h1>Ethan Grey</h1>
+        </div>
+        <div class="userDetailsBody">
+            <!-- Splitting the user details into 2 columns: labels and data -->
+            <div class="left-col">
+                <span>Postcode</span>
+                <span>Phone Number</span>
+                <span>Emergency Contact</span>
+                <span>Emergency Contact No.</span>
+                <span>Emergency Contact Email</span>
+            </div>
+            <div class="right-col">
+                <span>AB25 EJJ</span>
+                <span>0123456789</span>
+                <span>Amanda Grey</span>
+                <span>01224 123456</span>
+                <span>AGrey85@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="userDetails">
+        <!-- The user's name in white, against a red background -->
+        <div class="userDetailsHeader">
+            <h1>John Smith</h1>
+        </div>
+        <div class="userDetailsBody">
+            <!-- Splitting the user details into 2 columns: labels and data -->
+            <div class="left-col">
+                <span>Postcode</span>
+                <span>Phone Number</span>
+                <span>Emergency Contact</span>
+                <span>Emergency Contact No.</span>
+                <span>Emergency Contact Email</span>
+            </div>
+            <div class="right-col">
+                <span>AB23 7LD</span>
+                <span>9876543210</span>
+                <span>Eric Smith</span>
+                <span>07766 123456</span>
+                <span>EricS88@gmail.com</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="userDetails">
+        <!-- The user's name in white, against a red background -->
+        <div class="userDetailsHeader">
+            <h1>Jack Anderson</h1>
+        </div>
+        <div class="userDetailsBody">
+            <!-- Splitting the user details into 2 columns: labels and data -->
+            <div class="left-col">
+                <span>Postcode</span>
+                <span>Phone Number</span>
+                <span>Emergency Contact</span>
+                <span>Emergency Contact No.</span>
+                <span>Emergency Contact Email</span>
+            </div>
+            <div class="right-col">
+                <span>AB24 4JZ</span>
+                <span>01224 878787</span>
+                <span>Kyle Anderson</span>
+                <span>07742 888888</span>
+                <span>Kyle99@outlook.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScripts and link to jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+    <script src="js/users.js"></script>
+</body>
+</html>
