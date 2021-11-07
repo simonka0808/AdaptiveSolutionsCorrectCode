@@ -1,0 +1,88 @@
+
+.event-wrapper {
+    background-color: #f50004;
+    border-radius: 5px;
+    margin: 50px auto;
+    width: 65%;
+}
+
+.events-row {
+    /* margin: 0 auto;
+    width: 90vw;
+    max-width: 1200px; */
+    background-color: #f50004;
+}
+.location-col{
+    background-color: white;
+    border-style: solid;
+    border-color: #f50004;
+    margin-bottom: 2px;
+}
+
+.date{
+    padding:30px;
+    color:white;
+    font-size:24px;
+}
+.day{
+    padding:30px;
+    color:white;
+    font-size:24px;
+    float: right;
+}
+
+.time{
+    margin:20px;
+    font-size:18px
+}
+
+.location{
+    margin:20px;
+}
+
+
+
+.container-navbar{
+    background-color: #f50004;
+    border-radius: 0px 0px 5px 5px;
+    padding: 50px;
+}
+.container-navbar h1 {
+    color: white;
+}
+
+.container-navbar h2 {
+    color: white;
+}
+
+.attend-button {
+    background-color: #F9C013;
+    border-color: #F9C013;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
+}
+
+.maincontent{
+    padding: 20px;
+    
+}
+
+.maincontent.container{
+    padding: 50px;
+}
+
+.qrcodescan-button {
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+.location-col button{
+    float: right;
+}
+.attend-btn{
+    padding: 10px;
+    margin-bottom: 50px;
+}
