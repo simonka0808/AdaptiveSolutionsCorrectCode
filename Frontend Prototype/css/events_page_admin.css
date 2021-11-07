@@ -1,0 +1,74 @@
+.container-navbar{
+    background-color: #f50004;
+    border-radius: 0px 0px 5px 5px;
+    padding: 50px;
+}
+.container-navbar h1 {
+    color: white;
+}
+
+.container-navbar h2 {
+    color: white;
+}
+
+.delete-button {
+    background-color: red;
+    border-color: red;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
+    color: white;
+}
+
+
+
+.attend-button {
+    background-color: #F9C013;
+    border-color: #F9C013;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
+}
+
+.maincontent{
+    padding: 20px;
+    
+}
+
+.newevent-button {
+    background-color: #F9C013;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.qrcode-button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
+}
+
+.addmanual-button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
+}
+
+.single-event-container{
+    margin-top: 50px;
+}

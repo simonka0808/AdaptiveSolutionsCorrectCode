@@ -1,0 +1,47 @@
+.profile-page-row{
+    margin: 0 auto;
+    width: 70vw;
+    background-color: white;
+    border-radius: 3%;
+    padding: 20px;
+    max-width: 1200px;
+}
+#logoutBtn {
+    background-color: #F9C013;
+    border-color: #F9C013;
+    padding: 11px 30px;
+    border-radius: 6px;
+    float: right;
+}
+
+#deleteAccountBtn{
+    margin-top: 10px;
+    background-color: white;
+    border-color: #f50004;
+    padding: 4px 9px;
+    border-style: solid;
+    border-radius: 6px;
+    color: #f50004;
+}
+#saveChangesBtn{
+    margin-top: 10px;
+    background-color:#f50004;
+    border-color: #f50004;
+    padding: 11px 30px;
+    border-style: solid;
+    border-radius: 6px;
+    color: white;
+}
+
+.container-navbar{
+    background-color: #f50004;
+    border-radius: 0px 0px 5px 5px;
+    padding: 50px;
+}
+.container-navbar h1 {
+    color: white;
+}
+
+.container-navbar h2 {
+    color: white;
+}

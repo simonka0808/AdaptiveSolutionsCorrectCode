@@ -1,0 +1,61 @@
+body {
+    background-color: #f50004;
+}
+
+.sign-in-row {
+    margin: 0 auto;
+    width: 60vw;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.sign-in-header-wrapper {
+    color: #f50004;
+    margin-left: 70px;
+}
+
+
+.login-container {
+    width: 100%;
+    margin-top: 100px;
+
+}
+
+.login-logo img {
+    max-width: 70%;
+    height: auto;
+    float: middle;
+}
+
+.signInFormWrapper {
+    padding: 20px;
+}
+
+#signInForm .col-lg-12 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dontHaveAnAcc {
+    background-color: #f50004;
+    margin-right: 150px;
+
+}
+
+.dontHaveAnAcc p {
+    text-align: right;
+}
+
+.signInBtn {
+    background-color: #F9C013;
+    border-color: #F9C013;
+    padding: 5px;
+    width: 9vw;
+}
+
+.dontHaveAnAcc-in-row {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 1200px;
+}
