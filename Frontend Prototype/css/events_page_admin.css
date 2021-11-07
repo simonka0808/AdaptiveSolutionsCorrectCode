@@ -1,8 +1,9 @@
-.container-navbar{
+.container-navbar {
     background-color: #f50004;
     border-radius: 0px 0px 5px 5px;
     padding: 50px;
 }
+
 .container-navbar h1 {
     color: white;
 }
@@ -32,9 +33,9 @@
     height: 50px;
 }
 
-.maincontent{
+.maincontent {
     padding: 20px;
-    
+
 }
 
 .newevent-button {
@@ -69,6 +70,7 @@
     height: 50px;
 }
 
-.single-event-container{
+.single-event-container {
     margin-top: 50px;
+    border-radius: 5px;
 }
