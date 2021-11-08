@@ -1,100 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/users.css">
+    <link rel="stylesheet" href="/css/users.css" />
     <title>User Search</title>
-</head>
-<body>
-    <div class="container-navbar">
-        <%- include('../partials/nav_admin') %>
-    </div>
-   
+  </head>
+  <body>
+    <div class="container-navbar"><%- include('../partials/nav_admin') %></div>
 
     <!-- Search bar for finding user details at top of page -->
     <div class="searchBar">
-        <form>
-            <input type="text" class="form-control" id="searchInput" placeholder="Enter a name...">
-            <button type="submit" class="btn btn-light" id="searchButton" onClick="searchUsers()"> Search</button>
-        </form>
+      <form>
+        <input
+          type="text"
+          class="form-control"
+          id="searchInput"
+          placeholder="Enter a name..."
+        />
+        <button
+          type="submit"
+          class="btn btn-light"
+          id="searchButton"
+          onClick="searchUsers()"
+        >
+          Search
+        </button>
+      </form>
     </div>
-
 
     <!-- Blocks containing contact details for searched users -->
     <div class="userDetails">
-        <!-- The user's name in white, against a red background -->
-        <div class="userDetailsHeader">
-            <h1>Ethan Grey</h1>
+      <!-- The user's name in white, against a red background -->
+      <div class="userDetailsHeader">
+        <h1>Ethan Grey</h1>
+      </div>
+      <div class="userDetailsBody">
+        <!-- Splitting the user details into 2 columns: labels and data -->
+        <div class="left-col">
+          <span>Postcode</span>
+          <span>Phone Number</span>
+          <span>Emergency Contact</span>
+          <span>Emergency Contact No.</span>
+          <span>Emergency Contact Email</span>
         </div>
-        <div class="userDetailsBody">
-            <!-- Splitting the user details into 2 columns: labels and data -->
-            <div class="left-col">
-                <span>Postcode</span>
-                <span>Phone Number</span>
-                <span>Emergency Contact</span>
-                <span>Emergency Contact No.</span>
-                <span>Emergency Contact Email</span>
-            </div>
-            <div class="right-col">
-                <span>AB25 EJJ</span>
-                <span>0123456789</span>
-                <span>Amanda Grey</span>
-                <span>01224 123456</span>
-                <span>AGrey85@gmail.com</span>
-            </div>
+        <div class="right-col">
+          <span>AB25 EJJ</span>
+          <span>0123456789</span>
+          <span>Amanda Grey</span>
+          <span>01224 123456</span>
+          <span>AGrey85@gmail.com</span>
         </div>
+      </div>
     </div>
 
     <div class="userDetails">
-        <!-- The user's name in white, against a red background -->
-        <div class="userDetailsHeader">
-            <h1>John Smith</h1>
+      <!-- The user's name in white, against a red background -->
+      <div class="userDetailsHeader">
+        <h1>John Smith</h1>
+      </div>
+      <div class="userDetailsBody">
+        <!-- Splitting the user details into 2 columns: labels and data -->
+        <div class="left-col">
+          <span>Postcode</span>
+          <span>Phone Number</span>
+          <span>Emergency Contact</span>
+          <span>Emergency Contact No.</span>
+          <span>Emergency Contact Email</span>
         </div>
-        <div class="userDetailsBody">
-            <!-- Splitting the user details into 2 columns: labels and data -->
-            <div class="left-col">
-                <span>Postcode</span>
-                <span>Phone Number</span>
-                <span>Emergency Contact</span>
-                <span>Emergency Contact No.</span>
-                <span>Emergency Contact Email</span>
-            </div>
-            <div class="right-col">
-                <span>AB23 7LD</span>
-                <span>9876543210</span>
-                <span>Eric Smith</span>
-                <span>07766 123456</span>
-                <span>EricS88@gmail.com</span>
-            </div>
+        <div class="right-col">
+          <span>AB23 7LD</span>
+          <span>9876543210</span>
+          <span>Eric Smith</span>
+          <span>07766 123456</span>
+          <span>EricS88@gmail.com</span>
         </div>
+      </div>
     </div>
-    
+
     <div class="userDetails">
-        <!-- The user's name in white, against a red background -->
-        <div class="userDetailsHeader">
-            <h1>Jack Anderson</h1>
+      <!-- The user's name in white, against a red background -->
+      <div class="userDetailsHeader">
+        <h1>Jack Anderson</h1>
+      </div>
+      <div class="userDetailsBody">
+        <!-- Splitting the user details into 2 columns: labels and data -->
+        <div class="left-col">
+          <span>Postcode</span>
+          <span>Phone Number</span>
+          <span>Emergency Contact</span>
+          <span>Emergency Contact No.</span>
+          <span>Emergency Contact Email</span>
         </div>
-        <div class="userDetailsBody">
-            <!-- Splitting the user details into 2 columns: labels and data -->
-            <div class="left-col">
-                <span>Postcode</span>
-                <span>Phone Number</span>
-                <span>Emergency Contact</span>
-                <span>Emergency Contact No.</span>
-                <span>Emergency Contact Email</span>
-            </div>
-            <div class="right-col">
-                <span>AB24 4JZ</span>
-                <span>01224 878787</span>
-                <span>Kyle Anderson</span>
-                <span>07742 888888</span>
-                <span>Kyle99@outlook.com</span>
-            </div>
+        <div class="right-col">
+          <span>AB24 4JZ</span>
+          <span>01224 878787</span>
+          <span>Kyle Anderson</span>
+          <span>07742 888888</span>
+          <span>Kyle99@outlook.com</span>
         </div>
+      </div>
     </div>
 
     <!-- JavaScripts and link to jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
     <script src="js/users.js"></script>
-</body>
+  </body>
 </html>
