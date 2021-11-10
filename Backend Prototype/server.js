@@ -90,7 +90,8 @@ app.post("/dologin", function (req, res) {
 
         req.session.currentuser = email
         console.log("user logged in");
-
+        
+        res.redirect("/events_user")
       } else {
         res.redirect("/signIn");
       }
