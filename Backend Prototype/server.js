@@ -76,7 +76,7 @@ app.post("/dologin", function (req, res) {
   var email = req.body.email;
   var pword = req.body.pass;
   db.collection("users").findOne(
-    {"login.username":email},
+    {"email":email},
     function (err, result) {
       if (err) throw err;
 
