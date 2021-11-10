@@ -14,7 +14,7 @@ app.use(
   })
 );
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
 
@@ -71,7 +71,7 @@ app.get("/users", function (req, res) {
 
 //--------------------------------- POST ROUTES ----------------------------------------
 
-app.post("/dologin", urlencodedParser, function (req, res) {
+app.post("/dologin", function (req, res) {
   console.log(JSON.stringify(req.body));
   var email = req.body.email;
   var pword = req.body.pass;
