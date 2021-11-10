@@ -75,6 +75,27 @@ app.post("/dologin", function (req, res) {
   console.log(JSON.stringify(req.body));
   var email = req.body.email;
   var pword = req.body.pass;
+  db.collection("users").findOne(
+    {"login.username":email},
+    function (err, result) {
+      if (err) throw err;
+
+      if(!result) {
+        res.redirect("/signIn")
+        return;
+      }
+
+      if(result.login.password == pword) {
+        req.session.loggedin = true;
+
+        req.session.currentuser = email
+        console.log("user logged in");
+
+      } else {
+        res.redirect("/signIn");
+      }
+    }
+  )
 });
 
 /*
