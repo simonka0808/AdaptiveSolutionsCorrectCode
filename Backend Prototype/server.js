@@ -13,6 +13,8 @@ app.use(
   })
 );
 
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.set("view engine", "ejs");
 
 //Store static html files in the public folder
