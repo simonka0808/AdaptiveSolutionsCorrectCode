@@ -85,7 +85,7 @@ app.post("/dologin", function (req, res) {
         return;
       }
 
-      if(result.login.password == pword) {
+      if(result.password == pword) {
         req.session.loggedin = true;
 
         req.session.currentuser = email
