@@ -41,7 +41,7 @@ app.get("/", function (req, res) {
 
 //Sign In page
 app.get("/signIn", function (req, res) {
-  res.sendFile("public/signIn.html", { root: __dirname });
+  res.sendFile("public/login.html", { root: __dirname });
 });
 
 //Register page
