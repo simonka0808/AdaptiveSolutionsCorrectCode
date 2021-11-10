@@ -90,7 +90,7 @@ app.post("/dologin", function (req, res) {
 
         req.session.currentuser = email
         console.log("user logged in");
-        if(result.admin == true){
+        if(result.admin == "true"){
           res.redirect("/events_admin")
         } else {
           res.redirect("/events_user")
