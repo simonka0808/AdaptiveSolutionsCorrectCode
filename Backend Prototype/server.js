@@ -58,7 +58,7 @@ app.get("/users", function(req, res) {
 app.post('/dologin', function(req, res) {
     console.log(JSON.stringify(req.body))
     var email = req.body.email
-    var pword = req.body.password
+    var pword = req.body.pass
 })
 
 //Starts the server
