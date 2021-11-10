@@ -1,1 +1,2 @@
 {"_id":1,"firstname":"Joe","lastname":"Back","dob":"11/05/2000","postcode":"AB10 1LT","email":"example@gmail.com","emergency":{"name":"Jane doe","phonenumber":"12345678"}, "password":"goodpass123"}
+{"_id":2,"email":"admin","password":"admin1"}
