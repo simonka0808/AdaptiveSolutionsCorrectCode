@@ -53,5 +53,13 @@ app.get("/users", function(req, res) {
     res.render("pages/users");
 });
 
+//--------------------------------- POST ROUTES ----------------------------------------
+
+app.post('/dologin', function(req, res) {
+    console.log(JSON.stringify(req.body))
+    var email = req.body.email
+    var pword = req.body.password
+})
+
 //Starts the server
 app.listen(8080);
