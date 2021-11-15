@@ -57,8 +57,6 @@ app.get("/events_user", function (req, res) {
 
   if (!req.session.isadmin) {
     res.render("pages/events_user");
-  } else {
-    res.redirect("back");
   }
 });
 
@@ -70,8 +68,6 @@ app.get("/events_admin", function (req, res) {
 
   if (req.session.isadmin) {
     res.render("pages/events_admin");
-  } else {
-    res.redirect("back");
   }
 });
 
@@ -83,8 +79,6 @@ app.get("/profile", function (req, res) {
 
   if (!req.session.isadmin) {
     res.render("pages/profile");
-  } else {
-    res.redirect("back");
   }
 });
 
@@ -96,8 +90,6 @@ app.get("/users", function (req, res) {
 
   if (req.session.isadmin) {
     res.render("pages/users");
-  } else {
-    res.redirect("back");
   }
 });
 
