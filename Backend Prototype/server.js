@@ -14,7 +14,7 @@ app.use(
   })
 );
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
@@ -75,60 +75,61 @@ app.post("/dologin", function (req, res) {
   console.log(JSON.stringify(req.body));
   var email = req.body.email;
   var pword = req.body.pass;
-  db.collection("users").findOne(
-    {"email":email},
-    function (err, result) {
-      if (err) throw err;
+  db.collection("users").findOne({ email: email }, function (err, result) {
+    if (err) throw err;
 
-      if(!result) {
-        res.redirect("/signIn")
-        return;
-      }
-
-      if(result.password == pword) {
-        req.session.loggedin = true;
-
-        req.session.currentuser = email
-        console.log("user logged in");
-        if(result.isAdmin == true){
-          res.redirect("/events_admin")
-        } else {
-          res.redirect("/events_user")
-        }
-        
-      } else {
-        res.redirect("/signIn");
-      }
+    if (!result) {
+      res.redirect("/signIn");
+      return;
     }
-  )
+
+    if (result.password == pword) {
+      req.session.loggedin = true;
+
+      req.session.currentuser = email;
+      console.log("user logged in");
+      if (result.isAdmin == true) {
+        res.redirect("/events_admin");
+      } else {
+        res.redirect("/events_user");
+      }
+    } else {
+      res.redirect("/signIn");
+    }
+  });
 });
 
-/*
-  //Find one user from the database that matches the entered username
-  db.collection("users").findOne(
-    { "login.username": uname },
-    function (err, result) {
+app.post("/doregister", function (req, res) {
+  var pass1 = req.body.pass;
+  var pass2 = req.body.passConfirm;
+
+  if (pass1 != pass2) {
+    alert("passwords do not match!");
+  } else {
+    //we create the data string from the form components that have been passed in
+    var datatostore = {
+      firstname: req.body.first_name,
+      lastname: req.body.last_name,
+      dob: req.body.dob,
+      postcode: req.body.postcode,
+      email: req.body.email,
+      emergency: {
+        name: req.body.emergency_name,
+        phonenumber: req.body.emergency_phone,
+      },
+      isAdmin: false,
+      password: req.body.pass,
+    };
+
+    //once created we just run the data string against the database and all our new data will be saved/
+    db.collection("users").save(datatostore, function (err, result) {
       if (err) throw err;
-
-      if (!result) {
-        res.redirect("/signIn");
-        return;
-      }
-
-      //Check if the password attempt matches the database password
-      if (result.login.password == pword) {
-        req.session.loggedin = true;
-        //If successful, store the user's username in the session cookie
-        req.session.currentuser = uname;
-        console.log("User Logged In");
-        res.redirect("/");
-      } else {
-        res.redirect("/signIn");
-      }
-    }
-  );
+      console.log("saved to database");
+      //when complete redirect to the index
+      res.redirect("/");
+    });
+  }
 });
-*/
 
 //Starts the server
 app.listen(8080);
