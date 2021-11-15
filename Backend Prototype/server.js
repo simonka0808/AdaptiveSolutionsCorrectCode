@@ -111,11 +111,7 @@ app.post("/dologin", function (req, res) {
       req.session.loggedin = true;
 
       req.session.currentuser = email;
-      db.collection("users").findOne({ email: email }, function (err, result) {
-        if (err) throw err;
-
-        req.session.isadmin = result.isAdmin;
-      });
+      req.session.isadmin = result.isAdmin;
       console.log("user logged in");
       console.log("email: " + req.session.currentuser);
       console.log("is admin: " + req.session.isadmin);
