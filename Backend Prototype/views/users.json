@@ -1,2 +1,4 @@
 {"_id":1,"firstname":"Joe","lastname":"Back","dob":"11/05/2000","postcode":"AB10 1LT","email":"example@gmail.com","emergency":{"name":"Jane doe","phonenumber":"12345678"}, "password":"goodpass123","isAdmin":false}
-{"_id":2,"email":"admin@gmail.com","password":"admin1","isAdmin":true}
+{"_id":2,"firstname":"Jason","lastname":"Derulo","dob":"11/05/1805","postcode":"ED77 4GG","email":"watcha@gsay.com","emergency":{"name":"Ed Sheeran","phonenumber":"01224 666666"}, "password":"derulo","isAdmin":false}
+{"_id":3,"firstname":"bob","lastname":"smith","dob":"25/04/2000","postcode":"AB24 55J","email":"patrick@gmail.com","emergency":{"name":"Patrick","phonenumber":"12345678"}, "password":"dragon2","isAdmin":false}
+{"_id":4,"email":"admin@gmail.com","password":"admin1","isAdmin":true}
