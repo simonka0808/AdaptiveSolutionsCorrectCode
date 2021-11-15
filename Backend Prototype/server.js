@@ -89,7 +89,14 @@ app.get("/users", function (req, res) {
   }
 
   if (req.session.isadmin) {
-    res.render("pages/users");
+    db.collection("users")
+      .find()
+      .toArray(function (err, result) {
+        if (err) throw err;
+        res.render("pages/users", {
+          users: result,
+        });
+      });
   }
 });
 
