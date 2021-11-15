@@ -90,7 +90,7 @@ app.get("/users", function (req, res) {
 
   if (req.session.isadmin) {
     db.collection("users")
-      .find()
+      .find({ isAdmin: false })
       .toArray(function (err, result) {
         if (err) throw err;
         res.render("pages/users", {
