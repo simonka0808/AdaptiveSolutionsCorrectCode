@@ -51,22 +51,54 @@ app.get("/register", function (req, res) {
 
 //User Events page
 app.get("/events_user", function (req, res) {
-  res.render("pages/events_user");
+  if (!req.session.loggedin) {
+    res.redirect("/login.html");
+  }
+
+  if (req.session.isadmin) {
+    alert("Sorry, you cannot view this page");
+  } else {
+    res.render("pages/events_user");
+  }
 });
 
 //Admin Events page
 app.get("/events_admin", function (req, res) {
-  res.render("pages/events_admin");
+  if (!req.session.loggedin) {
+    res.redirect("/login.html");
+  }
+
+  if (req.session.isadmin) {
+    res.render("pages/events_admin");
+  } else {
+    alert("Sorry, you cannot view this page");
+  }
 });
 
 //User Profile page
 app.get("/profile", function (req, res) {
-  res.render("pages/profile");
+  if (!req.session.loggedin) {
+    res.redirect("/login.html");
+  }
+
+  if (req.session.isadmin) {
+    alert("Sorry, you cannot view this page");
+  } else {
+    res.render("pages/profile");
+  }
 });
 
 //Admin Users page
 app.get("/users", function (req, res) {
-  res.render("pages/users");
+  if (!req.session.loggedin) {
+    res.redirect("/login.html");
+  }
+
+  if (req.session.isadmin) {
+    res.render("pages/users");
+  } else {
+    alert("Sorry, you cannot view this page");
+  }
 });
 
 //--------------------------------- POST ROUTES ----------------------------------------
@@ -87,6 +119,11 @@ app.post("/dologin", function (req, res) {
       req.session.loggedin = true;
 
       req.session.currentuser = email;
+      db.collection("users").findOne({ email: email }, function (err, result) {
+        if (err) throw err;
+
+        req.session.isadmin = result.isAdmin;
+      });
       console.log("user logged in");
       if (result.isAdmin == true) {
         res.redirect("/events_admin");
