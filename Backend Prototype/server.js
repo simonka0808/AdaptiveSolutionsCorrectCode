@@ -124,9 +124,9 @@ app.post("/doregister", function (req, res) {
     //once created we just run the data string against the database and all our new data will be saved/
     db.collection("users").save(datatostore, function (err, result) {
       if (err) throw err;
-      console.log("saved to database");
+      console.log("added user to database");
       //when complete redirect to the index
-      res.redirect("/");
+      res.redirect("/login.html");
     });
   }
 });
