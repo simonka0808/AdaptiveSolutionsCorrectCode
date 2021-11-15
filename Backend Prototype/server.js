@@ -117,6 +117,8 @@ app.post("/dologin", function (req, res) {
         req.session.isadmin = result.isAdmin;
       });
       console.log("user logged in");
+      console.log("email: " + req.session.currentuser);
+      console.log("is admin: " + req.session.isadmin);
       if (result.isAdmin == true) {
         res.redirect("/events_admin");
       } else {
