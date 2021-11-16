@@ -32,8 +32,10 @@ MongoClient.connect(url, function (err, database) {
 //When a user navigates to the domain,
 //they will be redirected to the register page
 app.get("/", function (req, res) {
-  if (req.session.loggedin) {
+  if (req.session.loggedin && !req.session.isadmin) {
     res.render("pages/events_user", {});
+  } else if(req.session.loggedin && req.session.isadmin){
+    res.render("pages/events_admin", {});
   } else {
     res.redirect("/register");
   }
