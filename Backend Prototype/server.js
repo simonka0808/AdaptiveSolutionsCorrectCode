@@ -69,7 +69,13 @@ app.get("/events_admin", function (req, res) {
   }
 
   if (req.session.isadmin) {
-    res.render("pages/events_admin");
+    db.collection("events")
+    .find({})
+    .toArray(function (err, result) {
+      if(err) throw err;
+      res.render("pages/events_admin",{
+      events: result});
+    });
   }
 });
 
@@ -80,15 +86,10 @@ app.get("/profile", function (req, res) {
   }
 
   if (!req.session.isadmin) {
-    db.collection("users")
-      .findOne({ email: req.session.currentuser })
-      .toArray(function (err, result) {
-        if (err) throw err;
-        res.render("pages/users", {
-          user: result,
-        });
-      });
-    res.render("pages/profile");
+    var result = db
+      .collection("users")
+      .findOne({ email: req.session.currentuser, isAdmin: false });
+    res.render("pages/profile", { user: result });
   }
 });
 
