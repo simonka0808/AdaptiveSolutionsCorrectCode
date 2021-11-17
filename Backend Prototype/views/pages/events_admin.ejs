@@ -18,40 +18,45 @@
 
     <div class="maincontent">
 
-  
-         <!-- Blocks containing contact details for searched users -->
-    <% events.forEach(function (event) { %>
-        <div class="eventDetails">
-          <!-- The user's name in white, against a red background -->
-   
-          <div class="eventDetailsBody">
-            
+            <% events.forEach(function (event) { %>
+            <div class="container single-event-container container" style="border-style: solid; border-color: red;">
+                <div class="row" style="background-color: red;color: white; padding: 15px;">
+                    <div class="col">
+                        <h2></h2>
+                    </div>
+                    <div class="col">
+                        <h2><%= event.date_of_event %></h2>
+                    </div>
+                </div>
+                <div class="row" style="padding: 15px;">
+                    <div class="col">
+                        <h1><%= event.location %></h1>
+                    </div>
+                    <div class="col">
+                        <button class="delete-button" type="button"><h5>Delete Session</h5></button>
+                        <button class="addmanual-button" type="button"><h5>Add User Manually</h5></button>
+                    </div>
+                </div>
+                <div class="row" style="padding: 15px;">
+                    <div class="col">
+                        <h2><%= event.session_start_time+" "+event.session_end_time %></h2>
+                    </div>
+                    <div class="col">
+                        <button class="attend-button" type="button"><h4>Edit Session</h4></button>
+                        <button class="qrcode-button" type="button"><h4>QR CODE</h4></button>
+                    </div>
+                </div>
+            </div>
 
-            <div class="events-row row">
-                <div class="col">
-                    <p class=eventname> <%= event.eventname %></p>
-                    <p class=date> <%= event.date_of_event %></p>
-                </div>
-                <div class="col">
-                    <p class=day>Friday</p>
-                </div>
-                <div class="col-lg-12 location-col">
-                    <h1 class="location"><%= event.location %></h1>
-                    <h2 class="time"><%= event.session_start_time+" "+event.session_end_time %></h2>
 
-                </div>
-                <div class="col">
-                    <button class="showusers-button" type="button"><h5>Show users</h5></button>
-                    <button class="qrcode-button" type="button"><h4>QR Code</h4></button>
-                    <button class="attend-button" type="button"><h4>Edit event</h4></button>
-                    <button class="delete-button" type="button"><h5>Delete event</h5></button>
-                </div>
 
-        <% }); %>
-    
-        <!-- JavaScripts and link to jquery CDN -->
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
-        <script src="js/users.js"></script>
+
+
+
+
+
+
+
 
 <div class="neweventcontainer">
 <div class="container">
