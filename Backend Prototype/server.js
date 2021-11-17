@@ -75,7 +75,6 @@ app.get("/events_user", function (req, res) {
         events: events_timeframe,
       });
     })
-    res.render("pages/events_user");
   }
 });
 
