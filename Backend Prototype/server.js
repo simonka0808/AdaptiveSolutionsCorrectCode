@@ -249,9 +249,9 @@ app.post("/updateprofile", function (req, res) {
       function (err, res) {
         if (err) throw err;
         console.log("Record successfully updated (password not changed)");
-        res.redirect("/events_user");
       }
     );
+    res.redirect("/events_user");
   } else {
     //If the user has decided to change their password
     //Check that the entered password matches the current password
@@ -278,9 +278,9 @@ app.post("/updateprofile", function (req, res) {
         function (err, res) {
           if (err) throw err;
           console.log("Record successfully updated (password changed)");
-          res.redirect("/events_user");
         }
       );
+      res.redirect("/events_user");
     } else {
       console.log("Incorrect password(s) entered");
     }
