@@ -82,7 +82,7 @@ app.get("/profile", function (req, res) {
   if (!req.session.isadmin) {
     var result = db
       .collection("users")
-      .findOne({ email: req.session.currentuser });
+      .findOne({ email: req.session.currentuser, isAdmin: false });
     res.render("pages/profile", { user: result });
   }
 });
