@@ -65,7 +65,7 @@ app.get("/events_user", function (req, res) {
       events_timeframe = []
       result.forEach(event_var => {
         event_time = event_var.session_start_time
-        current_time = new Date().get_hour()
+        current_time = new Date().getHours()
         event_time = (int)(event_time.split(":")[0])
         if(Math.absoulute((event_time - current_time)) <= 1){
           events_timeframe.push(event_var)
