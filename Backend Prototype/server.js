@@ -230,7 +230,7 @@ app.post("/updateprofile", function (req, res) {
   //Get the database entry for the currently logged in user
   db.collection("users").findOne(
     { email: req.session.currentuser },
-    function (err, current_user) {
+    function (err, current_entry) {
       if (err) throw err;
       console.log(current_entry);
 
