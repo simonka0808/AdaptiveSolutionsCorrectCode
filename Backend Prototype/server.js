@@ -225,6 +225,65 @@ app.post("/createevent", function (req, res) {
   });
 });
 
+//When user updates their details from the profile page
+app.post("/updateprofile", function (req, res) {
+  //Get the database entry for the currently logged in user
+  var current_entry = { email: req.session.currentuser };
+
+  //If the user does not wish to update their password
+  if (req.body.pass == "") {
+    var newvalues = {
+      $set: {
+        postcode: req.body.postcode,
+        email: req.body.email,
+        emergency: {
+          name: req.body.emergency_name,
+          phonenumber: req.body.emergency_phone,
+        },
+      },
+    };
+    //Push updated information to database
+    db.collection("users").updateOne(
+      current_entry,
+      newvalues,
+      function (err, res) {
+        if (err) throw err;
+        console.log("Record successfully updated (password not changed)");
+      }
+    );
+  } else {
+    //If the user has decided to change their password
+    //Check that the entered password matches the current password
+    //And that the 2 new passwords entered match
+    if (
+      req.body.pass == current_entry.password &&
+      req.body.newPass == req.body.newPassConfirm
+    ) {
+      var newvalues = {
+        $set: {
+          postcode: req.body.postcode,
+          email: req.body.email,
+          emergency: {
+            name: req.body.emergency_email,
+            phonenumber: req.body.emergency_phone,
+          },
+        },
+      };
+      //Push updated information to database
+      db.collection("users").updateOne(
+        current_entry,
+        newvalues,
+        function (err, res) {
+          if (err) throw err;
+          console.log("Record successfully updated (password changed)");
+        }
+      );
+    } else {
+      console.log("Incorrect password(s) entered");
+    }
+  }
+});
+
 //logout button
 app.get("/dologout", function (req, res) {
   req.session.destroy();
