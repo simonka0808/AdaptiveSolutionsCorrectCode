@@ -84,6 +84,14 @@ app.get("/profile", function (req, res) {
   }
 });
 
+app.get("/createevents", function (req, res) {
+  if(!req.session.isadmin){
+    res.redirect("/profile")
+  }else{
+    res.render("pages/create_event")
+  }
+});
+
 //Admin Users page
 app.get("/users", function (req, res) {
   if (!req.session.loggedin) {
