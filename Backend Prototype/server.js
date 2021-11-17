@@ -229,6 +229,7 @@ app.post("/createevent", function (req, res) {
 app.post("/updateprofile", function (req, res) {
   //Get the database entry for the currently logged in user
   var current_entry = { email: req.session.currentuser };
+  console.log(current_entry);
 
   //If the user does not wish to update their password
   if (req.body.pass == "") {
