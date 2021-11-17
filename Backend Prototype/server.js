@@ -91,7 +91,7 @@ app.get("/profile", function (req, res) {
       .find({ email: req.session.currentuser })
       .toArray(function (err, result) {
         if (err) throw err;
-        res.render("pages/users", {
+        res.render("pages/profile", {
           users: result,
         });
       });
