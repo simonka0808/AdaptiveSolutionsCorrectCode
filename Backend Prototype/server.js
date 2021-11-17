@@ -249,6 +249,7 @@ app.post("/updateprofile", function (req, res) {
       function (err, res) {
         if (err) throw err;
         console.log("Record successfully updated (password not changed)");
+        res.redirect("/events_user");
       }
     );
   } else {
@@ -277,6 +278,7 @@ app.post("/updateprofile", function (req, res) {
         function (err, res) {
           if (err) throw err;
           console.log("Record successfully updated (password changed)");
+          res.redirect("/events_user");
         }
       );
     } else {
