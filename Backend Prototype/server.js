@@ -270,7 +270,7 @@ app.post("/updateprofile", function (req, res) {
               email: req.body.email,
               password: req.body.newPass,
               emergency: {
-                name: req.body.emergency_email,
+                name: req.body.emergency_name,
                 phonenumber: req.body.emergency_phone,
               },
             },
