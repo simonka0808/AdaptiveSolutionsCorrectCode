@@ -61,17 +61,18 @@ app.get("/events_user", function (req, res) {
     db.collection("events")
     .find({})
     .toArray(function (err, result) {
+      if(err) throw err;
       events_timeframe = []
-      result.forEach(events => {
-        event_time = events.session_start_time
+      result.forEach(event_var => {
+        event_time = event_var.session_start_time
         current_time = new Date().get_hour()
         event_time = (int)(event_time.split(":")[0])
         if(Math.absoulute((event_time - current_time)) <= 1){
-          events_timeframe.push(events)
+          events_timeframe.push(event_var)
         }
     })
       res.render("pages/events_user", {
-        events: event_timeframe
+        events: event_timeframe,
       });
     })
     res.render("pages/events_user");
