@@ -5,6 +5,8 @@
     <%- include('../partials/head') %>
     <title>Sessions</title>
     <link rel="stylesheet" href="/css/events_page.css">
+    <link rel="stylesheet" href="/css/nav.css">
+
 </head>
 
 <main class="register-container">
@@ -20,22 +22,35 @@
 </main>
 
 <body>
-    <div class="event-wrapper">
-        <div class="events-row row">
-            <div class="col">
-                <p class=date> Oct 29th</p>
-            </div>
-            <div class="col">
-                <p class=day>Friday</p>
-            </div>
-            <div class="col-lg-12 location-col">
-                <h1 class="location">Tullos Playing Field</h1>
-                <h2 class="time">18:00 - 18:30</h2>
-                <div class="attend-btn">
-                    <button class="attend-button" type="button">Attend</button>
+   
+
+    <% events.forEach(function (event) { %>
+        <div class="container single-event-container container" style="border-style: solid; border-color: red;">
+            <div class="row" style="background-color: red;color: white; padding: 15px;">
+                <div class="col">
+                    <h2></h2>
+                </div>
+                <div class="col">
+                    <h2><%= event.date_of_event %></h2>
                 </div>
             </div>
-
+            <div class="row" style="padding: 15px;">
+                <div class="col">
+                    <h1><%= event.location %></h1>
+                </div>
+                <div class="col">
+                    <button class="attend-button" type="button"><h5>Attend Session</h5></button>
+                </div>
+            </div>
+            <div class="row" style="padding: 15px;">
+                <div class="col">
+                    <h2><%= event.session_start_time+" "+event.session_end_time %></h2>
+                </div>
+                <div class="col">
+                  
+                </div>
+            </div>
+        </div>
 
 
         </div>

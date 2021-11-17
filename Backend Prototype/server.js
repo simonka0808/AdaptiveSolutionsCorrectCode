@@ -86,12 +86,13 @@ app.get("/events_admin", function (req, res) {
 
   if (req.session.isadmin) {
     db.collection("events")
-    .find({})
-    .toArray(function (err, result) {
-      if(err) throw err;
-      res.render("pages/events_admin",{
-      events: result});
-    });
+      .find({})
+      .toArray(function (err, result) {
+        if (err) throw err;
+        res.render("pages/events_admin", {
+          events: result,
+        });
+      });
   }
 });
 
@@ -102,10 +103,14 @@ app.get("/profile", function (req, res) {
   }
 
   if (!req.session.isadmin) {
-    var result = db
-      .collection("users")
-      .findOne({ email: req.session.currentuser, isAdmin: false });
-    res.render("pages/profile", { user: result });
+    db.collection("users")
+      .find({ email: req.session.currentuser })
+      .toArray(function (err, result) {
+        if (err) throw err;
+        res.render("pages/profile", {
+          users: result,
+        });
+      });
   }
 });
 
