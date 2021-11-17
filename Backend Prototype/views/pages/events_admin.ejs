@@ -20,7 +20,7 @@
 
   
          <!-- Blocks containing contact details for searched users -->
-    <% events.forEach(function (events) { %>
+    <% events.forEach(function (event) { %>
         <div class="eventDetails">
           <!-- The user's name in white, against a red background -->
    
@@ -29,14 +29,14 @@
 
             <div class="events-row row">
                 <div class="col">
-                    <p class=date> <%= events.date_of_event</p>
+                    <p class=date> <%= event.date_of_event %></p>
                 </div>
                 <div class="col">
                     <p class=day>Friday</p>
                 </div>
                 <div class="col-lg-12 location-col">
-                    <h1 class="location">events.session_name</h1>
-                    <h2 class="time"><%= events.session_start_time+" "+events.session_end_time %></h2>
+                    <h1 class="location">event.session_name</h1>
+                    <h2 class="time"><%= event.session_start_time+" "+event.session_end_time %></h2>
                 </div>
 
         <% }); %>
