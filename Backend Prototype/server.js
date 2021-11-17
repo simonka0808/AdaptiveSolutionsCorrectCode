@@ -74,9 +74,8 @@ app.get("/events_admin", function (req, res) {
     .toArray(function (err, result) {
       if(err) throw err;
       res.render("pages/events_admin",{
-      events: result}) 
-    })
-    res.render("pages/events_admin");
+      events: result});
+    });
   }
 });
 
