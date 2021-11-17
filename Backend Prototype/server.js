@@ -59,22 +59,22 @@ app.get("/events_user", function (req, res) {
 
   if (!req.session.isadmin) {
     db.collection("events")
-    .find({})
-    .toArray(function (err, result) {
-      if(err) throw err;
-      events_timeframe = []
-      result.forEach(event_var => {
-        event_time = event_var.session_start_time
-        current_time = new Date().getHours()
-        event_time = parseInt((event_time.split(":")[0]))
-        if(Math.abs((event_time - current_time)) <= 1){
-          events_timeframe.push(event_var)
-        }
-    })
-      res.render("pages/events_user", {
-        events: events_timeframe,
+      .find({})
+      .toArray(function (err, result) {
+        if (err) throw err;
+        events_timeframe = [];
+        result.forEach((event_var) => {
+          event_time = event_var.session_start_time;
+          current_time = new Date().getHours();
+          event_time = parseInt(event_time.split(":")[0]);
+          if (Math.abs(event_time - current_time) <= 1) {
+            events_timeframe.push(event_var);
+          }
+        });
+        res.render("pages/events_user", {
+          events: events_timeframe,
+        });
       });
-    })
   }
 });
 
@@ -223,6 +223,12 @@ app.post("/createevent", function (req, res) {
     //when complete redirect to the index
     res.redirect("/events_admin");
   });
+});
+
+//logout button
+app.get("/dologout", function (req, res) {
+  req.session.destroy();
+  res.redirect("/login.html");
 });
 
 //Starts the server
