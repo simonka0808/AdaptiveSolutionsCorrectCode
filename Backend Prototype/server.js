@@ -70,12 +70,13 @@ app.get("/events_admin", function (req, res) {
 
   if (req.session.isadmin) {
     db.collection("events")
-    .find({})
-    .toArray(function (err, result) {
-      if(err) throw err;
-      res.render("pages/events_admin",{
-      events: result});
-    });
+      .find({})
+      .toArray(function (err, result) {
+        if (err) throw err;
+        res.render("pages/events_admin", {
+          events: result,
+        });
+      });
   }
 });
 
@@ -86,10 +87,14 @@ app.get("/profile", function (req, res) {
   }
 
   if (!req.session.isadmin) {
-    var result = db
-      .collection("users")
-      .findOne({ email: req.session.currentuser, isAdmin: false });
-    res.render("pages/profile", { user: result });
+    db.collection("users")
+      .find({ email: req.session.currentuser })
+      .toArray(function (err, result) {
+        if (err) throw err;
+        res.render("pages/profile", {
+          users: result,
+        });
+      });
   }
 });
 
@@ -190,8 +195,9 @@ app.post("/createevent", function (req, res) {
     session_id: Math.floor(1000 + Math.random() * 9000),
     session_start_time: req.body.session_start_time,
     session_end_time: req.body.session_end_time,
-    date_of_event: req.body.date_of_event,
+    date_of_event: req.body.day_of_session,
     session_name: req.body.session_name,
+    session_location: req.body.location,
   };
 
   //once created we just run the data string against the database and all our new data will be saved/
