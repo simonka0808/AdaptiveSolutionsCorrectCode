@@ -34,10 +34,10 @@ MongoClient.connect(url, function (err, database) {
 app.get("/", function (req, res) {
   if (req.session.loggedin && !req.session.isadmin) {
     res.render("pages/events_user", {});
-  } else if(req.session.loggedin && req.session.isadmin){
+  } else if (req.session.loggedin && req.session.isadmin) {
     res.render("pages/events_admin", {});
   } else {
-    res.redirect("/register");
+    res.redirect("/login.html");
   }
 });
 
@@ -80,15 +80,23 @@ app.get("/profile", function (req, res) {
   }
 
   if (!req.session.isadmin) {
+    db.collection("users")
+      .find({ email: req.session.currentuser })
+      .toArray(function (err, result) {
+        if (err) throw err;
+        res.render("pages/users", {
+          user: result,
+        });
+      });
     res.render("pages/profile");
   }
 });
 
 app.get("/create_events", function (req, res) {
-  if(!req.session.isadmin){
-    res.redirect("/profile")
-  }else{
-    res.render("pages/create_events")
+  if (!req.session.isadmin) {
+    res.redirect("/profile");
+  } else {
+    res.render("pages/create_events");
   }
 });
 
