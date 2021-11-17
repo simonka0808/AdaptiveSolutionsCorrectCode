@@ -84,11 +84,11 @@ app.get("/profile", function (req, res) {
   }
 });
 
-app.get("/createevents", function (req, res) {
+app.get("/create_events", function (req, res) {
   if(!req.session.isadmin){
     res.redirect("/profile")
   }else{
-    res.render("pages/create_event")
+    res.render("pages/create_events")
   }
 });
 
