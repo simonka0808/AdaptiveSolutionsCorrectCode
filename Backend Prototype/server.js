@@ -80,15 +80,10 @@ app.get("/profile", function (req, res) {
   }
 
   if (!req.session.isadmin) {
-    db.collection("users")
-      .findOne({ email: req.session.currentuser })
-      .toArray(function (err, result) {
-        if (err) throw err;
-        res.render("pages/users", {
-          user: result,
-        });
-      });
-    res.render("pages/profile");
+    var result = db
+      .collection("users")
+      .findOne({ email: req.session.currentuser });
+    res.render("pages/profile", { user: result });
   }
 });
 
