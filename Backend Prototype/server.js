@@ -72,7 +72,7 @@ app.get("/events_user", function (req, res) {
         }
     })
       res.render("pages/events_user", {
-        events: event_timeframe,
+        events: events_timeframe,
       });
     })
     res.render("pages/events_user");
