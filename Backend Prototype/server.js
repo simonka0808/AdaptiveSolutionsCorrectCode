@@ -176,11 +176,11 @@ app.post("/createevent", function (req, res) {
   } else {
     //we create the data string from the form components that have been passed in
     var datatostore = {
-      starttime: req.body.session_start_time,
-      endtime: req.body.session_end_time,
-      date: req.body.date_of_event,
-      sessionname: req.body.session_name,
-      sessionid: Math.floor(1000 + Math.random() * 9000),
+      session_id: Math.floor(1000 + Math.random() * 9000),
+      session_start_time: req.body.session_start_time,
+      session_end_time: req.body.session_end_time,
+      date_of_event: req.body.date_of_event,
+      session_name: req.body.session_name,
     };
 
     //once created we just run the data string against the database and all our new data will be saved/
