@@ -268,7 +268,7 @@ app.post("/updateprofile", function (req, res) {
             $set: {
               postcode: req.body.postcode,
               email: req.body.email,
-              password: req.body.pass,
+              password: req.body.newPass,
               emergency: {
                 name: req.body.emergency_email,
                 phonenumber: req.body.emergency_phone,
