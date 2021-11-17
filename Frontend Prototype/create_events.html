@@ -1,30 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') %>
-    <title>Create Session</title>
-    <link rel="stylesheet" href="/css/events_page_admin.css">
+    <title>Create Events Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    
 </head>
-
-
-<div class="container-navbar">
-    <%- include('../partials/nav_admin') %>
-</div>
-
-
-
-<main class="register-container">
-    <div class="register-form-row">
+<div class="row">
+    <div class="col-md-3">
+      <!-- <img src="images/Denis Law's Streetsport Logo 2018 WB.jpg" alt="Italian Trulli" style="width:70%;height:70%;"> -->
+      <h1>Denis Law Legacy Trust</h1>
+    </div>
+    <div class="col-md-3">
+      <a href="events_admin">
+        <h2>Sessions</h2>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="users">
+        <h2>Users</h2>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="create_events">
+        <h2>Create Session</h2>
+      </a>
+    </div>
+  </div>
+  
+<main class="create-events-container">
+    <div class="create-events-row">
         <div id="registerForm">
-            <div class="register-title-wrapper">
                 <div class="row align-items-center">
                     <div class="col">
                         <h1>Create a new event</h1>
                         <hr>
                     </div>
                     <div class="col login-logo">
-                        <img src="/images/Denis Law's Streetsport Logo 2018 WB.jpg" style="">
+                        <img src="/images/Denis Law's Streetsport Logo 2018 WB.jpg">
                     </div>
                 </div>
 
@@ -55,12 +73,10 @@
                         </div>
                 </form>
 
-            </div>
         </div>
 
     </div>
 
 
 </main>
-
 
