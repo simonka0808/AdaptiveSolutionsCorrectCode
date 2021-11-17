@@ -190,8 +190,9 @@ app.post("/createevent", function (req, res) {
     session_id: Math.floor(1000 + Math.random() * 9000),
     session_start_time: req.body.session_start_time,
     session_end_time: req.body.session_end_time,
-    date_of_event: req.body.date_of_event,
+    date_of_event: req.body.day_of_session,
     session_name: req.body.session_name,
+    session_location: req.body.location,
   };
 
   //once created we just run the data string against the database and all our new data will be saved/
