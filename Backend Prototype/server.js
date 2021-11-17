@@ -167,5 +167,31 @@ app.post("/doregister", function (req, res) {
   }
 });
 
+app.post("/createevent", function (req, res) {
+  var pass1 = req.body.pass;
+  var pass2 = req.body.passConfirm;
+
+  if (pass1 != pass2) {
+    alert("passwords do not match!");
+  } else {
+    //we create the data string from the form components that have been passed in
+    var datatostore = {
+      session_id: Math.floor(1000 + Math.random() * 9000),
+      session_start_time: req.body.session_start_time,
+      session_end_time: req.body.session_end_time,
+      date_of_event: req.body.date_of_event,
+      session_name: req.body.session_name,
+    };
+
+    //once created we just run the data string against the database and all our new data will be saved/
+    db.collection("events").save(datatostore, function (err, result) {
+      if (err) throw err;
+      console.log("added event to database");
+      //when complete redirect to the index
+      res.redirect("/events_admin");
+    });
+  }
+});
+
 //Starts the server
 app.listen(8080);
