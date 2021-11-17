@@ -69,6 +69,12 @@ app.get("/events_admin", function (req, res) {
   }
 
   if (req.session.isadmin) {
+    db.collection("events")
+    .toArray(function (err, result) {
+      if(err) throw err;
+      res.render("pages/events_admin",{
+      events: result}) 
+    })
     res.render("pages/events_admin");
   }
 });
