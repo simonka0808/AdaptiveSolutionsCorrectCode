@@ -299,5 +299,12 @@ app.get("/dologout", function (req, res) {
   res.redirect("/login.html");
 });
 
+//delete session
+app.get("/delete_session", function (req, res){
+  var session_name_to_remove = req.body.session_name;
+  db.collection("events").remove({session_name: session_name_to_remove}, true);
+  console.log(session_name_to_remove + " has been removed")
+});
+
 //Starts the server
 app.listen(8080);

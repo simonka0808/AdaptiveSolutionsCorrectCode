@@ -31,7 +31,7 @@
           </div>
           <hr />
         </div>
-        <form id="register" action="/updateprofile" method="POST">
+        <form id="register" method="POST">
           <div class="row credentials-row">
             <div class="col-md-6">
               <label style="display: inherit"><b>Postcode:</b></label>
@@ -101,13 +101,13 @@
             <div class="col-md-6">
                 <button
                 id="deleteAccountBtn"
-                onclick="window.location.href='login.html'"
+                type="submit" formaction="/deleteaccount"
                 >
                 Delete Account
                 </button>
             </div>
             <div class="col-md-6">
-                <button id="saveChangesBtn" type="submit">Save Changes</button>
+                <button id="saveChangesBtn" type="submit" formaction="/updateprofile">Save Changes</button>
             </div>
         </form>
       </div>
