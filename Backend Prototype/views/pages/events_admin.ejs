@@ -44,7 +44,7 @@
                         <h2><%= event.session_start_time+" "+event.session_end_time %></h2>
                     </div>
                     <div class="col">
-                        <button class="editSession-button"  type="button" href="/edit_event.ejs?event=<%= event.session_name%>"></a>Edit Session</button>
+                        <button class="editSession-button"  type="button" href="/edit_event?event=<%= event.session_id%>"></a>Edit Session</button>
                         <button class="qrcode-button" type="button">QR CODE</button>
                     </div>
                 </div>
