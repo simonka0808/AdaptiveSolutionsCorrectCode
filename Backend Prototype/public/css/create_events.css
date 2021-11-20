@@ -20,6 +20,7 @@ img{
 .create-events-row #registerForm{
     padding: 60px;
     border-style: solid;
+    margin-top: 60px;
 }
 
 .create-session-btn{
