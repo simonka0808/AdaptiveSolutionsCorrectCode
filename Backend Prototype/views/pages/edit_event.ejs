@@ -34,31 +34,31 @@
                     <div class="row credentials-row">
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Session name</b></label>
-                            <input type="text" placeholder="Session name:" name="session_name"  value = "<%= event[0].session_name %>" required>
+                            <input type="text" placeholder="Session name:" name="session_name"  value = "<%= event.session_name %>" required>
                         </div>
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Session start time:</b></label>
                             
                             <!-- <input type="text" placeholder="Session start time:" name="session_start_time" required> -->
 
-                            <input type="time"   placeholder="Session start time:" id="session_start_time" name="session_start_time" value="<%= event[0].session_start_time %>" required>
+                            <input type="time"   placeholder="Session start time:" id="session_start_time" name="session_start_time" value="<%= event.session_start_time %>" required>
 
                         </div>
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Session end time:</b></label>
                             <!-- <input type="text" placeholder="Session end time:" name="session_end_time" required> -->
-                            <input type="time"   placeholder="Session end time:" id="session_end_time" name="session_end_time" value="<%= event[0].session_end_time %>" required>
+                            <input type="time"   placeholder="Session end time:" id="session_end_time" name="session_end_time" value="<%= event.session_end_time %>" required>
                         </div>
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Date of session:</b></label>
                             <!-- <input type="text" placeholder="Date:" name="day_of_session" required> -->
 
-                            <input type="date" id="day_of_session" name="day_of_session" value="<%= event[0].day_of_session %>" required>
+                            <input type="date" id="day_of_session" name="day_of_session" value="<%= event.day_of_session %>" required>
 
                         </div>
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Location</b></label>
-                            <input type="text" placeholder="location :" name="location" value="<%= event[0].location %>" required>
+                            <input type="text" placeholder="location :" name="location" value="<%= event.location %>" required>
                         </div>
                   
 
