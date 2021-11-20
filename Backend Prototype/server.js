@@ -312,7 +312,7 @@ app.get("/delete_session", function (req, res) {
 });
 
 //Deletes the currently logged in user from the database
-app.post("/delete", function (req, res) {
+app.post("/deleteaccount", function (req, res) {
   //Check that the user is logged in
   if (!req.session.loggedin) {
     res.redirect("/login");
