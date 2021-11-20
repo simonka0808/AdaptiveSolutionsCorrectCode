@@ -147,7 +147,7 @@ app.get("/usersquery", function (req, res) {
 
   if (req.session.isadmin) {
     db.collection("users")
-      .find({ isAdmin: false, firstname: req.body.searchInput })
+      .find({ isAdmin: false, firstname: req.query.searchInput })
       .toArray(function (err, result) {
         if (err) throw err;
         res.render("pages/users", {
