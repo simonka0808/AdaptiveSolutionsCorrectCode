@@ -12,7 +12,7 @@
     <%- include('../partials/nav_admin') %>
     <!-- Search bar for finding user details at top of page -->
     <div class="searchBar">
-      <form>
+      <form action="/users">
         <input
           type="text"
           class="form-control"
@@ -20,12 +20,7 @@
           name="searchInput"
           placeholder="Enter a name..."
         />
-        <button
-          type="submit"
-          class="btn btn-light"
-          id="searchButton"
-          action="/users"
-        >
+        <button type="submit" class="btn btn-light" id="searchButton">
           Search
         </button>
       </form>
