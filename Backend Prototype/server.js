@@ -148,13 +148,14 @@ app.get("/edit_event", function (req, res) {
   }
 
   var id = req.query.event;
-
-  db.collection("events").findOne({ session_id: id }, function (err, result) {
+  console.log("working 1");
+  db.collection("events").find({ session_id: id }).toArray(function (err, result) {
     if (err) throw err;
-
+    console.log("working 2");
     res.render("pages/edit_event", {
       event: result,
     });
+
   });
 });
 
