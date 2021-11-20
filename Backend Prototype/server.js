@@ -375,12 +375,7 @@ app.post("/editevent", function (req, res) {
  
 
   //once created we just run the data string against the database and all our new data will be saved/
-  db.collection("events").updateOne({"session_name":current_entry.session_name}, {
-    "session_start_time": newvalues.session_start_time,
-    "session_end_time": newvalues.session_end_time,
-    "date_of_event": newvalues.data_of_event,
-    "session_name": newvalues.session_name,
-    },function (err, result) {
+  db.collection("events").updateOne(current_entry, newvalues,function (err, result) {
 
     if (err) throw err;
     console.log("added event to database");
