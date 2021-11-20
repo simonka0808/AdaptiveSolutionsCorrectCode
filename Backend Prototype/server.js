@@ -362,14 +362,13 @@ app.post("/editevent", function (req, res) {
       if (err) throw err;
       console.log(current_entry);
 
-
+  console.log(req.body.session_start_time);
   var newvalues = {
     $set: {
       session_start_time: req.body.session_start_time,
       session_end_time: req.body.session_end_time,
       date_of_event: req.body.day_of_session,
       session_name: req.body.session_name,
-      session_location: req.body.location,
       },
     };
  
