@@ -142,7 +142,7 @@ app.get("/users", function (req, res) {
 
 // edit_events page
 
-app.get("/edit_event", function (req, res) {
+app.get("/pages/edit_event", function (req, res) {
   if (!req.session.loggedin) {
     res.redirect("/login");
   }
