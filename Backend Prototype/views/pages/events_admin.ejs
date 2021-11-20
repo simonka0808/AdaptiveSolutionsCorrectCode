@@ -6,6 +6,7 @@
     <title>Sessions</title>
     <link rel="stylesheet" href="/css/events_page_admin.css">
     <link rel="stylesheet" href="/css/nav.css">
+    <script src="/js/events_admin.js"></script>
 
 </head>
 
@@ -35,7 +36,7 @@
                         <h1><%= event.location %></h1>
                     </div>
                     <div class="col">
-                        <button class="delete-button" type="button">Delete Session</button>
+                        <button class="delete-button" onclick="deleteSession()" type="button">Delete Session</button>
                         <button class="addmanual-button" type="button">Add User Manually</button>
                     </div>
                 </div>
