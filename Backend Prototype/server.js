@@ -300,12 +300,31 @@ app.get("/dologout", function (req, res) {
 });
 
 //delete session
-app.get("/delete_session", function (req, res){
+app.get("/delete_session", function (req, res) {
   var session_name_to_remove = req.body.session_name;
-  db.collection('events').deleteOne({"session_name": session_name_to_remove}, function(err, result) {
+  db.collection("events").deleteOne(
+    { session_name: session_name_to_remove },
+    function (err, result) {
+      if (err) throw err;
+      console.log("session removed");
+    }
+  );
+});
+
+//Deletes the currently logged in user from the database
+app.post("/delete", function (req, res) {
+  //Check that the user is logged in
+  if (!req.session.loggedin) {
+    res.redirect("/login");
+    return;
+  }
+
+  var email = req.session.currentuser;
+  db.collection("users").deleteOne({ email: email }, function (err, result) {
     if (err) throw err;
-    console.log("session removed")
-  })
+    //If successful, redirect user to login page
+    res.redirect("/");
+  });
 });
 
 //Starts the server
