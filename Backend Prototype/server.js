@@ -129,15 +129,27 @@ app.get("/users", function (req, res) {
   }
 
   if (req.session.isadmin) {
-    db.collection("users")
-      .find({ isAdmin: false })
+    //If no parameters have been given
+    if (!req.body) {
+      db.collection("users")
+        .find({ isAdmin: false })
+        .toArray(function (err, result) {
+          if (err) throw err;
+          res.render("pages/users", {
+            users: result,
+          });
+        });
+    } else {
+      //If a parameter has been given (i.e. admin searched for a specific name)
+      db.collection("users")
+      .find({ isAdmin: false, firstname: req.body.searchInput })
       .toArray(function (err, result) {
         if (err) throw err;
         res.render("pages/users", {
           users: result,
         });
       });
-  }
+    }
 });
 
 // edit_events page
