@@ -3,11 +3,11 @@ body{
 }
 .profile-page-row{
     margin: 0 auto;
-    width: 70vw;
     background-color: white;
     border-radius: 3%;
     padding: 20px;
     max-width: 1200px;
+    margin-top: 60px;
 }
 #logoutBtn {
     background-color: #F9C013;

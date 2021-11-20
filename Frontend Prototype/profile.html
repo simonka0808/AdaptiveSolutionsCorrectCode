@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/navbar.css">
 
-    
+
 
 </head>
 
@@ -18,109 +18,108 @@
     <div class="nav">
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
-          <div class="nav-title">
-            Dennis Law Legacy Trust
-          </div>
-        </div>
-        <div class="nav-btn">
-          <label for="nav-check">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-        
-        <div class="nav-links">
-          <a href="events_page_admin.html">Events</a>
-          <a href="users.html">Users</a>
-    
-        </div>
-      </div>
-    <div class="profile-page-row">
-        <div id="registerForm">
-            <div class="register-title-wrapper row">
-                <div class="col-md-6">
-                    <h1>My Profile</h1>
-                </div>
-                <div class="col-md-6">
-                    <button id="logoutBtn" type="button" onclick="window.location.href='login.html'">Log Out</button>
-                </div>
-                <div class="col-lg-12">
-                    <p>Update your details below</p>
-                </div>
-                <hr>
+            <h1>Denis Law Agency Trust</h1>>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
             </div>
-            <form id=register>
 
-                <div class="row credentials-row">
+            <div class="nav-links">
+                <a href="events_page_admin.html">Events</a>
+                <a href="users.html">Users</a>
+
+            </div>
+        </div>
+        <div class="profile-page-row">
+            <div id="registerForm">
+                <div class="register-title-wrapper row">
                     <div class="col-md-6">
-                        <label style="display: inherit;"><b>Postcode:</b></label>
-                        <input type="text" placeholder="AB25 EJJ" name="postcode">
+                        <h1>My Profile</h1>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="logoutBtn" type="button" onclick="window.location.href='login.html'">Log
+                            Out</button>
                     </div>
                     <div class="col-lg-12">
-                        <label style="display: inherit;"><b>Phone Number:</b></label>
-                        <input type="text" placeholder="0123456789" name="phonenumber">
+                        <p>Update your details below</p>
                     </div>
+                    <hr>
                 </div>
-            </form>
-            <hr>
-            <form id=emergencyContact>
-                <p class="emergency-details-header">Emergency Contact</p>
                 <form id=register>
+
                     <div class="row credentials-row">
                         <div class="col-md-6">
-                            <label style="display: inherit;"><b>Name:</b></label>
-                            <input type="text" placeholder="Enter Name" name="emergency_name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label style="display: inherit;"><b>Phone Number:</b></label>
-                            <input type="text" placeholder="Enter phone number" name="emergency_phone" required>
+                            <label style="display: inherit;"><b>Postcode:</b></label>
+                            <input type="text" placeholder="AB25 EJJ" name="postcode">
                         </div>
                         <div class="col-lg-12">
-                            <label style="display: inherit;"><b>Email:</b></label>
-                            <input type="email" placeholder="Enter email" name="emergency_email" required>
+                            <label style="display: inherit;"><b>Phone Number:</b></label>
+                            <input type="text" placeholder="0123456789" name="phonenumber">
                         </div>
+                    </div>
+                </form>
+                <hr>
+                <form id=emergencyContact>
+                    <p class="emergency-details-header">Emergency Contact</p>
+                    <form id=register>
+                        <div class="row credentials-row">
+                            <div class="col-md-6">
+                                <label style="display: inherit;"><b>Name:</b></label>
+                                <input type="text" placeholder="Enter Name" name="emergency_name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label style="display: inherit;"><b>Phone Number:</b></label>
+                                <input type="text" placeholder="Enter phone number" name="emergency_phone" required>
+                            </div>
+                            <div class="col-lg-12">
+                                <label style="display: inherit;"><b>Email:</b></label>
+                                <input type="email" placeholder="Enter email" name="emergency_email" required>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </form>
+                <hr>
+                <div class="row credentials-row">
+                    <div class="col-md-6">
+                        <label style="display: inherit;"><b>Current Password:</b></label>
+                        <input type="password" name="pass" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="display: inherit;"><b>New Password:</b></label>
+                        <input type="password" name="passConfirm">
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="display: inherit;"><b>Confirm New Password:</b></label>
+                        <input type="password" name="passConfirm">
+                    </div>
+                </div>
+
+
+                <div class="row password-row">
+                    <div class="col-lg-12">
+                        <label style="display: inherit;"><input type="checkbox" checked="checked" name="remember">
+                            Remember
+                            me </label>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="deleteAccountBtn" onclick="window.location.href='login.html'">Delete
+                            Account</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="saveChangesBtn" type="button">Save Changes</button>
                     </div>
 
 
-                </form>
-
-            </form>
-            <hr>
-            <div class="row credentials-row">
-                <div class="col-md-6">
-                    <label style="display: inherit;"><b>Current Password:</b></label>
-                    <input type="password" name="pass" required>
-                </div>
-                <div class="col-md-6">
-                    <label style="display: inherit;"><b>New Password:</b></label>
-                    <input type="password" name="passConfirm">
-                </div>
-                <div class="col-lg-12">
-                    <label style="display: inherit;"><b>Confirm New Password:</b></label>
-                    <input type="password" name="passConfirm">
                 </div>
             </div>
 
-
-            <div class="row password-row">
-                <div class="col-lg-12">
-                    <label style="display: inherit;"><input type="checkbox" checked="checked" name="remember">
-                        Remember
-                        me </label>
-                </div>
-                <div class="col-md-6">
-                    <button id="deleteAccountBtn" onclick="window.location.href='login.html'">Delete Account</button>
-                </div>
-                <div class="col-md-6">
-                    <button id="saveChangesBtn" type="button">Save Changes</button>
-                </div>
-
-
-            </div>
         </div>
 
-    </div>
 
-
-    </body>
+</body>
