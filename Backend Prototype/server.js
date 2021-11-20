@@ -146,15 +146,15 @@ app.get('/edit_event', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');}
   
   
-  var uname = req.query.event;
+  var id = req.query.event;
   
  
-  db.collection('events').findOne({"session_id": uname}, function(err, result) {
+  db.collection('events').findOne({"session_id": id}, function(err, result) {
     if (err) throw err;
    
 
 
-    res.render('pages/edit_event', {
+    res.render('/edit_event', {
       event: result
     })
   });
