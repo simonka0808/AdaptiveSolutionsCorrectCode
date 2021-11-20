@@ -148,7 +148,7 @@ app.get("/edit_event", function (req, res) {
   }
 
   var id = req.query.event;
-  console.log("working 1");
+  console.log("working 1" + id);
   db.collection("events").findOne({ session_id: id },function (err, result) {
     if (err) throw err;
     console.log(result);
