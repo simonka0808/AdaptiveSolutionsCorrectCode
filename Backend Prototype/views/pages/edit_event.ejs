@@ -21,7 +21,7 @@
         <div id="registerForm">
                 <div class="row align-items-center">
                     <div class="col top-col">
-                        <h1>Create a new event</h1>
+                        <h1>Edit an event</h1>
                         <hr>
                     </div>
                     <div class="col login-logo">
@@ -41,30 +41,30 @@
                             
                             <!-- <input type="text" placeholder="Session start time:" name="session_start_time" required> -->
 
-                            <input type="time"   placeholder="Session start time:" id="session_start_time" name="session_start_time" value="17:00" required>
+                            <input type="time"   placeholder="Session start time:" id="session_start_time" name="session_start_time" value="event.session_start_time" required>
 
                         </div>
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Session end time:</b></label>
                             <!-- <input type="text" placeholder="Session end time:" name="session_end_time" required> -->
-                            <input type="time"   placeholder="Session end time:" id="session_end_time" name="session_end_time" value="18:00" required>
+                            <input type="time"   placeholder="Session end time:" id="session_end_time" name="session_end_time" value="event.session_end_time" required>
                         </div>
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Date of session:</b></label>
                             <!-- <input type="text" placeholder="Date:" name="day_of_session" required> -->
 
-                            <input type="date" id="day_of_session" name="day_of_session" value="2021-11-22">
+                            <input type="date" id="day_of_session" name="day_of_session" value="event.day_of_session">
 
                         </div>
                         <div class="col-md-6">
                             <label style="display: inherit;"><b>Location</b></label>
-                            <input type="text" placeholder="location :" name="location" required>
+                            <input type="text" placeholder="location :" name="location" value="event.location" required>
                         </div>
                   
 
                         <div class="col-lg-12 create-session-btn">
 
-                            <button id="createSession" type="submit">Create
+                            <button id="editSession" type="submit">Edit
                                 Session</button>
                         </div>
                 </form>
