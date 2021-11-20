@@ -140,6 +140,27 @@ app.get("/users", function (req, res) {
   }
 });
 
+// edit_events page
+ 
+app.get('/edit_event', function(req, res) {
+  if(!req.session.loggedin){res.redirect('/login');}
+  
+  
+  var uname = req.query.event;
+  
+ 
+  db.collection('events').findOne({"session_id": uname}, function(err, result) {
+    if (err) throw err;
+   
+
+
+    res.render('pages/edit_event', {
+      event: result
+    })
+  });
+
+});
+
 //--------------------------------- POST ROUTES ----------------------------------------
 
 app.post("/dologin", function (req, res) {
