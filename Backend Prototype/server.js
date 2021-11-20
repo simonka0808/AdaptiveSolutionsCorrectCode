@@ -357,7 +357,7 @@ app.post("/editevent", function (req, res) {
   //we create the data string from the form components that have been passed in
 
   db.collection("events").findOne(
-    {session_name: req.query.event },
+    {session_name: id },
     function (err, current_entry) {
       if (err) throw err;
       console.log(current_entry);
