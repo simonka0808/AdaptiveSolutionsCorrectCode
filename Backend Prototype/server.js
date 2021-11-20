@@ -315,15 +315,16 @@ app.get("/delete_session", function (req, res) {
 app.post("/deleteaccount", function (req, res) {
   //Check that the user is logged in
   if (!req.session.loggedin) {
-    res.redirect("/login");
+    res.redirect("/login.html");
     return;
   }
 
   var email = req.session.currentuser;
   db.collection("users").deleteOne({ email: email }, function (err, result) {
     if (err) throw err;
-    //If successful, redirect user to login page
-    res.redirect("/");
+    //If successful, redirect user to login page and destroy session
+    req.session.destroy();
+    res.redirect("/login.html");
   });
 });
 
