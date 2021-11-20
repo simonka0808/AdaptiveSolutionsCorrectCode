@@ -141,24 +141,21 @@ app.get("/users", function (req, res) {
 });
 
 // edit_events page
- 
-app.get('/edit_event', function(req, res) {
-  if(!req.session.loggedin){res.redirect('/login');}
-  
-  
+
+app.get("/edit_event", function (req, res) {
+  if (!req.session.loggedin) {
+    res.redirect("/login");
+  }
+
   var id = req.query.event;
-  
- 
-  db.collection('events').findOne({"session_id": id}, function(err, result) {
+
+  db.collection("events").findOne({ session_id: id }, function (err, result) {
     if (err) throw err;
-   
 
-
-    res.render('/edit_event', {
-      event: result
-    })
+    res.render("/edit_event", {
+      event: result,
+    });
   });
-
 });
 
 //--------------------------------- POST ROUTES ----------------------------------------
@@ -199,7 +196,7 @@ app.post("/doregister", function (req, res) {
   var pass2 = req.body.passConfirm;
 
   if (pass1 != pass2) {
-    alert("passwords do not match!");
+    console.log("passwords do not match!");
   } else {
     //we create the data string from the form components that have been passed in
     var datatostore = {
@@ -328,6 +325,7 @@ app.get("/delete_session", function (req, res) {
     function (err, result) {
       if (err) throw err;
       console.log("session removed");
+      res.redirect("/events_admin");
     }
   );
 });
