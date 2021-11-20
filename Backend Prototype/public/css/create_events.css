@@ -1,5 +1,5 @@
 body{
-    background-color: #f50004;
+    background-color: white;
 }
 img{
     max-width: 100%;
@@ -15,9 +15,11 @@ img{
     max-width: 1200px;
     background-color: white;
     border-radius: 25px;
+    
 }
 .create-events-row #registerForm{
     padding: 60px;
+    border-style: solid;
 }
 
 .create-session-btn{
@@ -30,4 +32,12 @@ img{
     border-color: #F9C013;
     padding: 11px 30px;
     border-radius: 6px;
+}
+
+@media (max-width:768px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
 }

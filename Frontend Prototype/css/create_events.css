@@ -1,30 +1,39 @@
-body{
+body {
     background-color: #f50004;
 }
 
-.create-events-container{
+.create-events-container {
     width: 100%;
 }
 
-.create-events-row{
+.create-events-row {
     margin: 0 auto;
     width: 60vw;
     max-width: 1200px;
     background-color: white;
     border-radius: 25px;
 }
-.create-events-row #registerForm{
+
+.create-events-row #registerForm {
     padding: 60px;
 }
 
-.create-session-btn{
+.create-session-btn {
     text-align: center;
     margin-top: 40px;
 }
 
-#createSession{
+#createSession {
     background-color: #F9C013;
     border-color: #F9C013;
     padding: 11px 30px;
     border-radius: 6px;
+}
+
+@media (max-width:768px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
 }
