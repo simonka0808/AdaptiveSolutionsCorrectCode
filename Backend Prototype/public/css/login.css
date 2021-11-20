@@ -57,3 +57,8 @@ body {
     width: 90vw;
     max-width: 1200px;
 }
+
+form i {
+    /* margin-left: -30px; */
+    cursor: pointer;
+}
