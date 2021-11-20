@@ -46,5 +46,9 @@ img{
     .create-events-row{
         max-width: unset;
     }
+
+    #create_event{
+        margin-top: 35px;
+    }
     
 }

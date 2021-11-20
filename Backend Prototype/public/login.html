@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/login.css" />
 </head>
 <main>
-  <div class="login-container">
+  <!-- <div class="login-container">
     <div class="sign-in-row">
       <div class="signInFormWrapper">
         <div class="sign-in-header-wrapper">
@@ -52,10 +52,58 @@
         </p>
       </div>
     </div>
+  </div> -->
+
+  <div class="login-container">
+    <div class="sign-in-row">
+      <div class="signInFormWrapper">
+        <div class="sign-in-header-wrapper">
+
+          <div class="row align-items-center">
+            <div class="col">
+              <h1>Sign In</h1>
+              <hr>
+            </div>
+            <div class="col login-logo">
+              <img src="images/Denis Law's Streetsport Logo 2018 WB.jpg">
+            </div>
+          </div>
+
+        </div>
+        <form id="signInForm">
+          <div class="col-lg-12">
+            <label style="display: inherit;"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" required>
+          </div>
+          <div class="col-lg-12">
+
+            <label style="display: inherit;"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pass" required>
+          </div>
+          <div class="col-lg-12">
+
+            <label><input type="checkbox" checked="checked" name="remember"> Remember me </label>
+          </div>
+          <div class="col-lg-12">
+
+            <button class="signInBtn" type="button" onclick="window.location.href='profile.html'">Sign
+              In</button>
+          </div>
+          <hr>
+
+        </form>
+
+      </div>
+
+    </div>
   </div>
+
 
 
   <script src="js/login.js"></script>
 </main>
+
+
+
 
 </html>
