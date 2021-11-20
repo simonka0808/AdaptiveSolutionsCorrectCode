@@ -151,7 +151,7 @@ app.get("/edit_event", function (req, res) {
   console.log("working 1");
   db.collection("events").find({ session_id: id }).toArray(function (err, result) {
     if (err) throw err;
-    console.log("working 2");
+    console.log(result);
     res.render("pages/edit_event", {
       event: result,
     });
