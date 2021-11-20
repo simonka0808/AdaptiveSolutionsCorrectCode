@@ -1,7 +1,10 @@
 body {
     background-color: #f50004;
 }
-
+img{
+    max-width: 100%;
+    height: auto;
+}
 .sign-in-row {
     margin: 0 auto;
     width: 60vw;
