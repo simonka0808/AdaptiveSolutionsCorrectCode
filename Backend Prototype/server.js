@@ -318,7 +318,7 @@ app.get("/dologout", function (req, res) {
 });
 
 //delete session
-app.get("/delete_session", function (req, res) {
+app.post("/delete_session", function (req, res) {
   var session_name_to_remove = req.body.session_name;
   db.collection("events").deleteOne(
     { session_name: session_name_to_remove },
