@@ -328,6 +328,7 @@ app.get("/delete_session", function (req, res) {
     function (err, result) {
       if (err) throw err;
       console.log("session removed");
+      res.redirect("/events_admin")
     }
   );
 });
