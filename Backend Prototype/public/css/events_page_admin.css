@@ -18,7 +18,9 @@
     height: 50px;
     color: white;
 }
-
+.single-event-container{
+    margin-top: 60px;
+}
 
 
 .attend-button {
