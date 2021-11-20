@@ -75,11 +75,7 @@
   cursor: pointer;
 }
 
-.container-navbar {
-  background-color: #f50004;
-  border-radius: 0px 0px 5px 5px;
-  padding: 50px;
-}
+
 .container-navbar h1 {
   color: white;
 }
