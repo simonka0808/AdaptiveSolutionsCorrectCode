@@ -152,7 +152,7 @@ app.get("/edit_event", function (req, res) {
   db.collection("events").findOne({ session_id: id }, function (err, result) {
     if (err) throw err;
 
-    res.render("/edit_event", {
+    res.render("pages/edit_event", {
       event: result,
     });
   });
