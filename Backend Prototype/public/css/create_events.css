@@ -35,10 +35,17 @@ img{
     border-radius: 6px;
 }
 
-@media (max-width:768px) {
+@media screen and (max-width:768px) {
 
     h1 {
         font-size: 1.5rem;
     }
 
+}
+
+@media screen and (max-width: 600px){
+    .create-events-row{
+        max-width: unset;
+    }
+    
 }

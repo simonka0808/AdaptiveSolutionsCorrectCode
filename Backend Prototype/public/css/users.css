@@ -38,8 +38,7 @@
 .right-col span {
   padding: 10px;
   display: block;
-  padding-left: 25%;
-}
+  text-align: center;}
 
 .searchBar {
   margin: 50px auto;
