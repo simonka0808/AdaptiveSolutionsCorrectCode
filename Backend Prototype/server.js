@@ -142,14 +142,15 @@ app.get("/users", function (req, res) {
     } else {
       //If a parameter has been given (i.e. admin searched for a specific name)
       db.collection("users")
-      .find({ isAdmin: false, firstname: req.body.searchInput })
-      .toArray(function (err, result) {
-        if (err) throw err;
-        res.render("pages/users", {
-          users: result,
+        .find({ isAdmin: false, firstname: req.body.searchInput })
+        .toArray(function (err, result) {
+          if (err) throw err;
+          res.render("pages/users", {
+            users: result,
+          });
         });
-      });
     }
+  }
 });
 
 // edit_events page
@@ -161,13 +162,12 @@ app.get("/edit_event", function (req, res) {
 
   var id = req.query.event;
   console.log("working 1" + id);
-  db.collection("events").findOne({ session_name: id },function (err, result) {
+  db.collection("events").findOne({ session_name: id }, function (err, result) {
     if (err) throw err;
     console.log(result);
     res.render("pages/edit_event", {
       event: result,
     });
-
   });
 });
 
@@ -360,53 +360,39 @@ app.post("/deleteaccount", function (req, res) {
   });
 });
 
-
-
-
-
-
 app.post("/editevent", function (req, res) {
   //we create the data string from the form components that have been passed in
 
   db.collection("events").findOne(
-    {session_name: req.body.current_session_name },
+    { session_name: req.body.current_session_name },
     function (err, current_entry) {
       if (err) throw err;
       console.log(current_entry);
 
-  console.log(req.body.session_start_time);
-  var newvalues = {
-    $set: {
-      session_start_time: req.body.session_start_time,
-      session_end_time: req.body.session_end_time,
-      date_of_event: req.body.day_of_session,
-      session_name: req.body.session_name,
-      },
-    };
- 
+      console.log(req.body.session_start_time);
+      var newvalues = {
+        $set: {
+          session_start_time: req.body.session_start_time,
+          session_end_time: req.body.session_end_time,
+          date_of_event: req.body.day_of_session,
+          session_name: req.body.session_name,
+        },
+      };
 
-  //once created we just run the data string against the database and all our new data will be saved/
-  db.collection("events").updateOne(current_entry, newvalues,function (err, result) {
-
-    if (err) throw err;
-    console.log("added event to database");
-    //when complete redirect to the index
-    res.redirect("/events_admin");
-  });
+      //once created we just run the data string against the database and all our new data will be saved/
+      db.collection("events").updateOne(
+        current_entry,
+        newvalues,
+        function (err, result) {
+          if (err) throw err;
+          console.log("added event to database");
+          //when complete redirect to the index
+          res.redirect("/events_admin");
+        }
+      );
+    }
+  );
 });
-});
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Starts the server
 app.listen(8080);
