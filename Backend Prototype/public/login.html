@@ -1,81 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Login</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="css/login.css" />
-  </head>
-  <main>
-    <div class="login-container">
-      <div class="sign-in-row">
-        <div class="signInFormWrapper">
-          <div class="sign-in-header-wrapper">
-            <div class="row align-items-center">
-              <div class="col">
-                <h1>Sign In</h1>
-                <hr />
-              </div>
-              <div class="col login-logo">
-                <img src="/images/Denis Law's Streetsport Logo 2018 WB.jpg" />
-              </div>
+
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<main>
+  <div class="login-container">
+    <div class="sign-in-row">
+      <div class="signInFormWrapper">
+        <div class="sign-in-header-wrapper">
+          <div class="row align-items-center">
+            <div class="col">
+              <h1>Sign In</h1>
+              <hr />
+            </div>
+            <div class="col login-logo">
+              <img src="/images/Denis Law's Streetsport Logo 2018 WB.jpg" class="denis-logo" />
             </div>
           </div>
-          <form id="signInForm" action="/dologin" method="POST">
-            <div class="col-lg-12">
-              <label style="display: inherit"><b>Email</b></label>
-              <input
-                type="email"
-                placeholder="Enter Email"
-                name="email"
-                required
-              />
-            </div>
-            <div class="col-lg-12">
-              <label style="display: inherit"><b>Password</b></label>
-              <input
-                type="password"
-                placeholder="Enter Password"
-                name="pass"
-                required
-                id="password"
-              />
-              <i class="bi bi-eye-slash" id="togglePassword"></i>
-            </div>
-            <div class="col-lg-12">
-              <label
-                ><input type="checkbox" checked="checked" name="remember" />
-                Remember me
-              </label>
-            </div>
-            <div class="col-lg-12">
-              <button
-                class="signInBtn"
-                type="submit"
-              >
-                Sign In
-              </button>
-            </div>
-            <hr />
-          </form>
         </div>
-        <div class="dontHaveAnAcc-in-row">
-          <div class="dontHaveAnAcc">
-            <p>
-              <a href="register.html" style="text-decoration: none; color: white"
-                >Don't have an account?</a>
-            </p>
+        <form id="signInForm" action="/dologin" method="POST">
+          <div class="col-lg-12">
+            <label style="display: inherit"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" required />
           </div>
-        </div>
+          <div class="col-lg-12">
+            <label style="display: inherit"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pass" required id="password" />
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+          </div>
+          <div class="col-lg-12">
+            <label><input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </label>
+          </div>
+          <div class="col-lg-12">
+            <button class="signInBtn" type="submit">
+              Sign In
+            </button>
+          </div>
+          <hr />
+        </form>
+      </div>
+      <div class="dontHaveAnAcc">
+        <p>
+          <a href="register.html" style="text-decoration: none; color: white">Don't have an account?</a>
+        </p>
       </div>
     </div>
+  </div>
 
-    
-    <script src="js/login.js"></script>
-  </main>
+
+  <script src="js/login.js"></script>
+</main>
+
 </html>
