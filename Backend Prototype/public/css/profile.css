@@ -45,6 +45,8 @@ body{
     border: solid #f50004;
     padding: 15px;
 }
-.emergency-details-header{
+.emergency-details-header h5{
     margin-top: 20px;
+    color: #f50004;
+    
 }
