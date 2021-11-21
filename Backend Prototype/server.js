@@ -195,7 +195,7 @@ app.get("/addusersmanual", function (req, res) {
   db.collection("events").findOne({ session_name: id }, function (err, result) {
     if (err) throw err;
     console.log(result);
-    res.render("pages/edit_event", {
+    res.render("pages/add_users_manual", {
       event: result,
     });
   });
