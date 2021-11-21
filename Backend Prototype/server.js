@@ -202,6 +202,19 @@ app.get("/addusersmanual", function (req, res) {
   });
 });
 
+app.get("/userslist", function(req, res) {
+  if(req.session.isadmin){
+    db.collection("users")
+      .find({email: { $in: req.query.email }})
+      .toArray(function(err, result) {
+        if(err) throw err;
+        res.render("pages/users_in_event", {
+          users:result,
+        })
+      })
+  }
+});
+
 //--------------------------------- POST ROUTES ----------------------------------------
 
 app.post("/dologin", function (req, res) {
