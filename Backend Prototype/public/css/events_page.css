@@ -57,6 +57,15 @@
     height: 50px;
 }
 
+.show-participants-button{
+    background-color: #f98e13;
+    border-color: #f98e13;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
+}
+
 .maincontent{
     padding: 20px;
     
