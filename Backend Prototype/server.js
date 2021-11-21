@@ -207,7 +207,7 @@ app.get("/userslist", function(req, res) {
   console.log(email);
   if(req.session.isadmin){
     db.collection("users")
-      .find({email: {$in: email}})
+      .find({email: {$in: email.split(',')}})
       .toArray(function(err, result) {
         if(err) throw err;
         res.render("pages/users_in_event", {
