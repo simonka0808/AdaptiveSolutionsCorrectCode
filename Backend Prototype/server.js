@@ -397,5 +397,14 @@ app.post("/editevent", function (req, res) {
   );
 });
 
+
+app.post("/addtoevent", function (req, res) {
+  db.collection("event").findOne()
+
+
+
+});
+
+
 //Starts the server
 app.listen(8080);
