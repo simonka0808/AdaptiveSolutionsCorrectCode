@@ -487,7 +487,7 @@ app.post("/dousermanualupdate", function (req, res) {
           },
         
       };
-      db.collections("users").save(newvalues, function (err, result) {
+      db.collections("users").insert(newvalues, function (err, result) {
         if (err) throw err;
         console.log("added user to database");
       });
