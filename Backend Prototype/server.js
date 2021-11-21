@@ -453,7 +453,7 @@ app.post("/dousermanualupdate", function (req, res) {
      .toArray(function (err, current_session) {
        console.log(current_session[0].session_end_time);
        if (err) throw err;
-       theUser = req.session.currentuser;
+       theUser = req.body.email;
 
       //  var newvalues = {
         
