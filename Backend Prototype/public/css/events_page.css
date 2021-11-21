@@ -1,4 +1,3 @@
-
 .event-wrapper {
     background-color: #f50004;
     border-radius: 5px;
@@ -7,35 +6,37 @@
 }
 
 .events-row {
-  
+
     background-color: #f50004;
 }
-.location-col{
+
+.location-col {
     background-color: white;
     border-style: solid;
     border-color: #f50004;
     margin-bottom: 2px;
 }
 
-.date{
-    padding:30px;
-    color:white;
-    font-size:24px;
+.date {
+    padding: 30px;
+    color: white;
+    font-size: 24px;
 }
-.day{
-    padding:30px;
-    color:white;
-    font-size:24px;
+
+.day {
+    padding: 30px;
+    color: white;
+    font-size: 24px;
     float: right;
 }
 
-.time{
-    margin:20px;
-    font-size:18px
+.time {
+    margin: 20px;
+    font-size: 18px
 }
 
-.location{
-    margin:20px;
+.location {
+    margin: 20px;
 }
 
 
@@ -57,7 +58,7 @@
     height: 50px;
 }
 
-.show-participants-button{
+.show-participants-button {
     background-color: #f98e13;
     border-color: #f98e13;
     padding: 5px;
@@ -66,39 +67,60 @@
     height: 50px;
 }
 
-.maincontent{
+.maincontent {
     padding: 20px;
-    
+
 }
 
-.maincontent.container{
+.maincontent.container {
     padding: 50px;
 }
 
-.qrcodescan-button {
+
+.qrcode-button {
     background-color: black;
     border: none;
     color: white;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
 }
 
-.location-col button{
+.addmanual-button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    width: 140px;
+    height: 50px;
+}
+
+.location-col button {
     float: right;
 }
-.attend-btn{
+
+.attend-btn {
     padding: 10px;
     margin-bottom: 50px;
 }
 
-.single-event-container{
+.single-event-container {
     margin-top: 50px;
     margin-bottom: 30px;
-    border-style: solid black;
-}
-.single-event-container h2{
-   color: white;
+    border: solid black;
 }
 
-.container-header{
+.single-event-container h2 {
+    color: white;
+}
+
+.container-header {
     background-color: black;
     padding: 15px;
+}
+
+.container-header h1 {
+   color: white;
 }
