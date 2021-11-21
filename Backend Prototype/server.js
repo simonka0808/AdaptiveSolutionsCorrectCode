@@ -186,7 +186,7 @@ app.get("/scan_qr", function (req, res) {
 });
 
 // addusersmanual
-app.get("/add_users_manual", function (req, res) {
+app.get("/addusersmanual", function (req, res) {
   if (!req.session.loggedin) {
     res.redirect("/login");
   }
@@ -207,7 +207,7 @@ app.get("/userslist", function(req, res) {
   console.log(email);
   if(req.session.isadmin){
     db.collection("users")
-      .find({email: {$in: email.split(',')}})
+      .find({email: {$in: email}})
       .toArray(function(err, result) {
         if(err) throw err;
         res.render("pages/users_in_event", {
@@ -487,11 +487,11 @@ app.post("/dousermanualupdate", function (req, res) {
       };
       db.collection("events").update(
         { session_name :req.body.current_session_name},
-        { $push: { user_signed_up: newvalues } }
+        { $push: { user_signed_up: req.body.email} }
       );
         }
       );
-      res.redirect("/add_users_manual");
+      res.redirect("/events_admin");
     });
 
 
