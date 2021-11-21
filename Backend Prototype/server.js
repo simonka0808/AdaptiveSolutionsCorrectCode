@@ -204,6 +204,7 @@ app.get("/addusersmanual", function (req, res) {
 
 app.get("/userslist", function(req, res) {
   var email = req.query.email.split(",");
+  var name = req.query.event;
   console.log(email);
   if(req.session.isadmin){
     db.collection("users")
@@ -212,6 +213,7 @@ app.get("/userslist", function(req, res) {
         if(err) throw err;
         res.render("pages/users_in_event", {
           users:result,
+          event: name,
         })
       })
   }
