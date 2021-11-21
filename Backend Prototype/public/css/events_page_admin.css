@@ -20,7 +20,7 @@
 }
 .single-event-container{
     margin-top: 50px;
-    border-style: solid black;
+    border: solid black;
 }
 .container-header{
     background-color: black;
