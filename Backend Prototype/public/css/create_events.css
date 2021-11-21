@@ -26,10 +26,16 @@ body{
     text-align: center;
     margin-top: 40px;
 }
-
-#createSession{
+#deleteSession{
     background-color: #F9C013;
     border-color: #F9C013;
+    padding: 11px 30px;
+    border-radius: 6px;
+}
+
+#createSession{
+    background-color: #f50004;
+    border-color: #f50004;
     padding: 11px 30px;
     border-radius: 6px;
 }
