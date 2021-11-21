@@ -183,6 +183,24 @@ app.get("/scan_qr", function (req, res) {
   res.render("pages/qrscanner");
 });
 
+
+// edit_events page
+app.get("/addusersmanual", function (req, res) {
+  if (!req.session.loggedin) {
+    res.redirect("/login");
+  }
+
+  var id = req.query.event;
+  console.log("working 1" + id);
+  db.collection("events").findOne({ session_name: id }, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    res.render("pages/edit_event", {
+      event: result,
+    });
+  });
+});
+
 //--------------------------------- POST ROUTES ----------------------------------------
 
 app.post("/dologin", function (req, res) {
