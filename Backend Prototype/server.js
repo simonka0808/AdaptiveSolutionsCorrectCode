@@ -413,7 +413,7 @@ app.post("/addtoevent", function (req, res) {
       if (err) throw err;
   
       theUser = req.session.currentuser;
-
+      console.log(theUser);
       db.collection("events").update( { "currentuser" : current_session[0]},{ $push: { "user_signed_up": {theUser}}});
       // current_session[0].user_signed_up.$push:{req.session.currentuser};
       console.log(
