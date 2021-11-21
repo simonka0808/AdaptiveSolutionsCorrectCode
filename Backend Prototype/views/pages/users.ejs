@@ -11,6 +11,13 @@
   <body>
     <%- include('../partials/nav_admin') %>
     <!-- Search bar for finding user details at top of page -->
+    <button
+      id="logoutBtn"
+      type="button"
+      onclick="window.location.href='/dologout'"
+    >
+      Log Out
+    </button>
     <div class="searchBar">
       <form action="/usersquery" method="get">
         <input
