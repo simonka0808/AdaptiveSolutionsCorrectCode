@@ -35,7 +35,7 @@ app.get("/", function (req, res) {
   if (req.session.loggedin && !req.session.isadmin) {
     res.redirect("/events_user");
   } else if (req.session.loggedin && req.session.isadmin) {
-    res.redirect("/events_admin");
+    res.redirect("/events_admin");OO
   } else {
     res.redirect("/login.html");
   }
@@ -406,11 +406,12 @@ app.post("/editevent", function (req, res) {
 });
 
 app.post("/addtoevent", function (req, res) {
-  db.collection("event").findOne(
+  db.collection("event").find(
     { session_name: req.body.sessionname },
     function (err, current_session) {
+      console.log(current_session);
       if (err) throw err;
-      current_session.user_signed_up.push(req.session.currentuser);
+      current_session[0].user_signed_up.push(req.session.currentuser);
       console.log(
         req.session.currentuser + " added to " + req.body.sessionname
       );
