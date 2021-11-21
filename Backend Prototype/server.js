@@ -185,8 +185,8 @@ app.get("/scan_qr", function (req, res) {
   res.render("pages/qrscanner");
 });
 
-// edit_events page
-app.get("/addusersmanual", function (req, res) {
+// addusersmanual
+app.get("/add_users_manual", function (req, res) {
   if (!req.session.loggedin) {
     res.redirect("/login");
   }
@@ -207,7 +207,7 @@ app.get("/userslist", function(req, res) {
   console.log(email);
   if(req.session.isadmin){
     db.collection("users")
-      .find({email: email })
+      .find({email: {$in: email.split(',')}})
       .toArray(function(err, result) {
         if(err) throw err;
         res.render("pages/users_in_event", {
@@ -464,12 +464,12 @@ app.post("/addtoevent", function (req, res) {
 
 app.post("/dousermanualupdate", function (req, res) {
   db.collection("events").findOne(
-    { session_name: req.body.current_session_name },
+    { session_name: req.body.current_session_name},
     function (err, current_entry) {
       if (err) throw err;
-      console.log(current_entry);
+      // console.log(current_entry);
 
-      console.log(req.body.session_start_time);
+      // console.log(req.body.session_start_time);
       var newvalues = {
         
 
@@ -485,26 +485,15 @@ app.post("/dousermanualupdate", function (req, res) {
           },
         
       };
-
-      db.collection("events").updateOne(
-        current_entry,
-        newvalues,
-        function (err, result) {
-          if (err) throw err;
-          console.log("added event to database");
-          //when complete redirect to the index
-          
+      db.collection("events").update(
+        { session_name :req.body.current_session_name},
+        { $push: { user_signed_up: newvalues } }
+      );
         }
       );
-
-
-
-
-
-
       res.redirect("/add_users_manual");
     });
- });
+
 
 
 //Starts the server
