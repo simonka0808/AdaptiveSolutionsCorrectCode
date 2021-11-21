@@ -411,12 +411,13 @@ app.post("/addtoevent", function (req, res) {
     function (err, current_session) {
       console.log(current_session.session_end_time);
       if (err) throw err;
-      current_session[0].user_signed_up.push(req.session.currentuser);
+      current_session[0].user_signed_up.$push(req.session.currentuser);
       console.log(
         req.session.currentuser + " added to " + req.body.sessionname
       );
     }
   );
+ res.redirect("/events_user");
 });
 
 //Starts the server
