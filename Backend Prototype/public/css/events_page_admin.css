@@ -20,6 +20,11 @@
 }
 .single-event-container{
     margin-top: 50px;
+    border-style: solid black;
+}
+.container-header{
+    background-color: black;
+    padding: 15px;
 }
 
 
