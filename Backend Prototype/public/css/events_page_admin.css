@@ -22,6 +22,9 @@
     margin-top: 50px;
     border: solid black;
 }
+.single-event-container h2{
+    color: white;
+}
 .container-header{
     background-color: black;
     padding: 15px;
@@ -42,7 +45,7 @@
     
 }
 
-.newevent-button {
+.editSession-button {
     background-color: #F9C013;
     border: none;
     color: black;
@@ -72,4 +75,11 @@
     border-radius: 25px;
     width: 140px;
     height: 50px;
+}
+
+@media screen and (max-width:768px){
+    .single-event-container button{
+        margin-bottom: 20px;
+    }
+
 }
