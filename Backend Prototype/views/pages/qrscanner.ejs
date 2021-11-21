@@ -1,12 +1,15 @@
 <html>
   <head>
+    <!-- https://minhazav.medium.com/qr-and-barcode-scanner-using-html-and-javascript-2cdc937f793d -->
     <script src="https://unpkg.com/html5-qrcode"></script>
   </head>
   <body>
     <div id="qr-reader" style="width: 600px" height="600px"></div>
     <script>
+      //https://minhazav.medium.com/qr-and-barcode-scanner-using-html-and-javascript-2cdc937f793d
       function onScanSuccess(decodedText, decodedResult) {
         console.log(`Code scanned = ${decodedText}`, decodedResult);
+        window.location.href = "";
       }
       var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
         fps: 10,
