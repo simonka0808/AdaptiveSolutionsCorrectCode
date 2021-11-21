@@ -31,7 +31,7 @@
 }
 
 
-.attend-button {
+.editSession-button {
     background-color: #F9C013;
     border-color: #F9C013;
     padding: 5px;
@@ -45,17 +45,6 @@
     
 }
 
-.editSession-button {
-    background-color: #F9C013;
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 25px;
-}
 
 .qrcode-button {
     background-color: black;
@@ -76,7 +65,9 @@
     width: 140px;
     height: 50px;
 }
-
+.col-start-time h2{
+    color:black
+}
 @media screen and (max-width:768px){
     .single-event-container button{
         margin-bottom: 20px;
