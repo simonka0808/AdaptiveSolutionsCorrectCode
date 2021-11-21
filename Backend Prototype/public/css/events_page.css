@@ -94,6 +94,9 @@
     margin-bottom: 30px;
     border-style: solid black;
 }
+.single-event-container h2{
+   color: white;
+}
 
 .container-header{
     background-color: black;
