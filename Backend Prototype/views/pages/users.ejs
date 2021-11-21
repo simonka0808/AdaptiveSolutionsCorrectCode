@@ -12,12 +12,13 @@
 <body>
   <%- include('../partials/nav_admin') %>
     <!-- Search bar for finding user details at top of page -->
-    <div class="col-xs-12 users-logOut">
-      <button class="btn btn-light" id="logoutBtn" type="button" onclick="window.location.href='/dologout'">
-        Log Out
-      </button>
-    </div>
+
     <div class="searchBar">
+      <div class="col-xs-12 users-logOut">
+        <button class="btn btn-light" id="logoutBtn" type="button" onclick="window.location.href='/dologout'">
+          Log Out
+        </button>
+      </div>
       <form action="/usersquery" method="get">
         <input type="text" class="form-control" id="searchInput" name="searchInput" placeholder="Enter a name..." />
         <button type="submit" class="btn btn-light" id="searchButton">
