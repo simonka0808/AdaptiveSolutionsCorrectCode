@@ -9,6 +9,7 @@
       //https://minhazav.medium.com/qr-and-barcode-scanner-using-html-and-javascript-2cdc937f793d
       function onScanSuccess(decodedText, decodedResult) {
         console.log(`Code scanned = ${decodedText}`, decodedResult);
+        alert("Code Scanned: " + decodedText);
         //window.location.href = "";
       }
       var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
