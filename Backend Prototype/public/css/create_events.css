@@ -1,8 +1,8 @@
 body{
     background-color: white;
 }
-img{
-    max-width: 100%;
+.login-logo{
+    max-width:70%;
     height: auto;
 }
 .create-events-container{
