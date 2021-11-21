@@ -14,6 +14,8 @@ app.use(
   })
 );
 
+app.disable("view cache");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
@@ -182,7 +184,6 @@ app.get("/scan_qr", function (req, res) {
 
   res.render("pages/qrscanner");
 });
-
 
 // edit_events page
 app.get("/addusersmanual", function (req, res) {
