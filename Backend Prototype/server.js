@@ -407,7 +407,7 @@ app.post("/editevent", function (req, res) {
 
 app.post("/addtoevent", function (req, res) {
   db.collection("events").find(
-    { session_name: req.body.sessionname },
+    { session_name: req.body.sessionname }).toArray(
     function (err, current_session) {
       console.log(current_session.session_end_time);
       if (err) throw err;
