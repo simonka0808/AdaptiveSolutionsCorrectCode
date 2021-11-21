@@ -464,12 +464,12 @@ app.post("/addtoevent", function (req, res) {
 
 app.post("/dousermanualupdate", function (req, res) {
   db.collection("events").findOne(
-    { session_name: req.body.current_session_name },
+    { session_name: req.body.current_session_name},
     function (err, current_entry) {
       if (err) throw err;
-      console.log(current_entry);
+      // console.log(current_entry);
 
-      console.log(req.body.session_start_time);
+      // console.log(req.body.session_start_time);
       var newvalues = {
         
 
@@ -485,26 +485,15 @@ app.post("/dousermanualupdate", function (req, res) {
           },
         
       };
-
-      db.collection("events").updateOne(
-        current_entry,
-        newvalues,
-        function (err, result) {
-          if (err) throw err;
-          console.log("added event to database");
-          //when complete redirect to the index
-          
+      db.collection("events").update(
+        { session_name :req.body.current_session_name},
+        { $push: { user_signed_up: newvalues } }
+      );
         }
       );
-
-
-
-
-
-
       res.redirect("/add_users_manual");
     });
- });
+
 
 
 //Starts the server
