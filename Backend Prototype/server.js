@@ -463,34 +463,47 @@ app.post("/addtoevent", function (req, res) {
 
 
 app.post("/dousermanualupdate", function (req, res) {
-  db.collection("events")
-     .find({ session_name: req.body.sessionname })
-     .toArray(function (err, current_session) {
-       console.log(current_session[0].session_end_time);
-       if (err) throw err;
-       theUser = req.body.email;
+  db.collection("events").findOne(
+    { session_name: req.body.current_session_name },
+    function (err, current_entry) {
+      if (err) throw err;
+      console.log(current_entry);
 
-      //  var newvalues = {
+      console.log(req.body.session_start_time);
+      var newvalues = {
         
-      //     first_name: req.body.first_name,
-      //     last_name: req.body.last_name,
-      //     date_of_birth: req.body.dob,
-      //     session_name: req.body.session_name,
+
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          postcode: req.body.postcode,
+          email: req.body.email,
+          dob: req.body.dob,
+
+          emergency: {
+            name: req.body.emergency_name,
+            phonenumber: req.body.emergency_phone,
+          },
+        
+      };
+
+      db.collection("events").updateOne(
+        current_entry,
+        newvalues,
+        function (err, result) {
+          if (err) throw err;
+          console.log("added event to database");
+          //when complete redirect to the index
           
-       
-      // };
+        }
+      );
 
 
-       db.collection("events").update(
-         { email: current_session[0].email },
-         { $push: { user_signed_up: theUser } }
-       );
- 
-     
-  
-     }
-   );
-   res.redirect("/add_users_manual");
+
+
+
+
+      res.redirect("/add_users_manual");
+    });
  });
 
 
