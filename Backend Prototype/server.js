@@ -14,6 +14,10 @@ app.use(
   })
 );
 
+response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+response.setHeader("Expires", "0"); // Proxies.
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
@@ -35,7 +39,8 @@ app.get("/", function (req, res) {
   if (req.session.loggedin && !req.session.isadmin) {
     res.redirect("/events_user");
   } else if (req.session.loggedin && req.session.isadmin) {
-    res.redirect("/events_admin");OO
+    res.redirect("/events_admin");
+    OO;
   } else {
     res.redirect("/login.html");
   }
@@ -68,7 +73,7 @@ app.get("/events_user", function (req, res) {
           current_time = new Date().getHours();
           event_time = parseInt(event_time.split(":")[0]);
           // if (Math.abs(event_time - current_time) <= 1) {
-            events_timeframe.push(event_var);
+          events_timeframe.push(event_var);
           // }
         });
         res.render("pages/events_user", {
@@ -406,22 +411,24 @@ app.post("/editevent", function (req, res) {
 });
 
 app.post("/addtoevent", function (req, res) {
-  db.collection("events").find(
-    { session_name: req.body.sessionname }).toArray(
-    function (err, current_session) {
+  db.collection("events")
+    .find({ session_name: req.body.sessionname })
+    .toArray(function (err, current_session) {
       console.log(current_session[0].session_end_time);
       if (err) throw err;
       console.log(req.body.sessionname);
       theUser = req.session.currentuser;
       console.log(theUser);
-      db.collection("events").update( { "email" : current_session[0].email},{ $push: { "user_signed_up": theUser}});
+      db.collection("events").update(
+        { email: current_session[0].email },
+        { $push: { user_signed_up: theUser } }
+      );
       // current_session[0].user_signed_up.$push:{req.session.currentuser};
       console.log(
         req.session.currentuser + " added to " + req.body.sessionname
       );
-    }
-  );
- res.redirect("/events_user");
+    });
+  res.redirect("/events_user");
 });
 
 //Starts the server
