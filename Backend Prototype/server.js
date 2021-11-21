@@ -174,6 +174,14 @@ app.get("/edit_event", function (req, res) {
   });
 });
 
+app.get("/scan_qr", function (req, res) {
+  if (!req.session.loggedin) {
+    res.redirect("/login.html");
+  }
+
+  res.render("pages/qrscanner");
+});
+
 //--------------------------------- POST ROUTES ----------------------------------------
 
 app.post("/dologin", function (req, res) {
