@@ -127,5 +127,11 @@
 }
 
 .time-col h2{
-    color: white;
+    color: black;
+}
+
+@media screen and (max-width){
+    h2{
+        font-size: 1.5rem;
+    }
 }
