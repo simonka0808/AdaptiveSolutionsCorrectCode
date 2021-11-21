@@ -487,7 +487,7 @@ app.post("/dousermanualupdate", function (req, res) {
       };
       db.collection("events").update(
         { session_name :req.body.current_session_name},
-        { $push: { user_signed_up: newvalues } }
+        { $push: { user_signed_up: req.body.email} }
       );
         }
       );
