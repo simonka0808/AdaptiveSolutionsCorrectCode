@@ -409,12 +409,12 @@ app.post("/addtoevent", function (req, res) {
   db.collection("events").find(
     { session_name: req.body.sessionname }).toArray(
     function (err, current_session) {
-      console.log(current_session.session_end_time);
+      console.log(current_session[0].session_end_time);
       if (err) throw err;
       console.log(req.body.sessionname);
       theUser = req.session.currentuser;
       console.log(theUser);
-      db.collection("events").update( { "currentuser" : current_session[0]},{ $push: { "user_signed_up": {theUser}}});
+      db.collection("events").update( { "email" : current_session[0].email},{ $push: { "user_signed_up": {theUser}}});
       // current_session[0].user_signed_up.$push:{req.session.currentuser};
       console.log(
         req.session.currentuser + " added to " + req.body.sessionname
