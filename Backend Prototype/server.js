@@ -446,5 +446,38 @@ app.post("/addtoevent", function (req, res) {
   res.redirect("/events_user");
 });
 
+
+app.post("/dousermanualupdate", function (req, res) {
+  db.collection("events")
+     .find({ session_name: req.body.sessionname })
+     .toArray(function (err, current_session) {
+       console.log(current_session[0].session_end_time);
+       if (err) throw err;
+       theUser = req.session.currentuser;
+
+      //  var newvalues = {
+        
+      //     first_name: req.body.first_name,
+      //     last_name: req.body.last_name,
+      //     date_of_birth: req.body.dob,
+      //     session_name: req.body.session_name,
+          
+       
+      // };
+
+
+       db.collection("events").update(
+         { email: current_session[0].email },
+         { $push: { user_signed_up: theUser } }
+       );
+ 
+     
+  
+     }
+   );
+   res.redirect("/add_users_manual");
+ });
+
+
 //Starts the server
 app.listen(8080);
