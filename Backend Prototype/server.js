@@ -414,7 +414,7 @@ app.post("/addtoevent", function (req, res) {
       console.log(req.body.sessionname);
       theUser = req.session.currentuser;
       console.log(theUser);
-      db.collection("events").update( { "email" : current_session[0].email},{ $push: { "user_signed_up": {theUser}}});
+      db.collection("events").update( { "email" : current_session[0].email},{ $push: { "user_signed_up": theUser}});
       // current_session[0].user_signed_up.$push:{req.session.currentuser};
       console.log(
         req.session.currentuser + " added to " + req.body.sessionname
