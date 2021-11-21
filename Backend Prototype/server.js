@@ -203,7 +203,7 @@ app.get("/addusersmanual", function (req, res) {
 });
 
 app.get("/userslist", function(req, res) {
-  var email = req.query.email;
+  var email = req.query.email.split(",");
   console.log(email);
   if(req.session.isadmin){
     db.collection("users")
