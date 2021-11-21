@@ -38,7 +38,8 @@
 .right-col span {
   padding: 10px;
   display: block;
-  text-align: center;}
+  text-align: center;
+}
 
 .searchBar {
   margin: 50px auto;
@@ -83,12 +84,19 @@
   color: white;
 }
 
-.users-logOut button{
+.users-logOut button {
   float: right;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 5px;
   color: #fff;
   background-color: #f50004;
   border: none;
   cursor: pointer;
   margin-bottom: 20px;
+}
+
+#searchButton {
+  width: 90px;
+  border-radius: 5px;
+  height: 40px;
+  margin-left: 5px;
 }
