@@ -7,9 +7,7 @@
 }
 
 .events-row {
-    /* margin: 0 auto;
-    width: 90vw;
-    max-width: 1200px; */
+  
     background-color: #f50004;
 }
 .location-col{
@@ -80,4 +78,15 @@
 .attend-btn{
     padding: 10px;
     margin-bottom: 50px;
+}
+
+.single-event-container{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-style: solid black;
+}
+
+.container-header{
+    background-color: black;
+    padding: 15px;
 }
