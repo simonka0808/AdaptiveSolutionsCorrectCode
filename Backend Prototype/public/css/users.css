@@ -85,4 +85,9 @@
 
 .users-logOut button{
   float: right;
+  border-radius: 0px 5px 5px 0px;
+  color: #fff;
+  background-color: #f50004;
+  border: none;
+  cursor: pointer;
 }
