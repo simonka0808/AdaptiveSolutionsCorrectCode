@@ -409,7 +409,7 @@ app.post("/addtoevent", function (req, res) {
   db.collection("events").find(
     { session_name: req.body.sessionname },
     function (err, current_session) {
-      console.log(current_session);
+      console.log(current_session.session_end_time);
       if (err) throw err;
       current_session[0].user_signed_up.push(req.session.currentuser);
       console.log(
