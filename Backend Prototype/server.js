@@ -185,8 +185,8 @@ app.get("/scan_qr", function (req, res) {
   res.render("pages/qrscanner");
 });
 
-// edit_events page
-app.get("/addusersmanual", function (req, res) {
+// addusersmanual
+app.get("/add_users_manual", function (req, res) {
   if (!req.session.loggedin) {
     res.redirect("/login");
   }
