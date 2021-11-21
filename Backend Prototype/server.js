@@ -14,10 +14,6 @@ app.use(
   })
 );
 
-response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-response.setHeader("Expires", "0"); // Proxies.
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
@@ -185,6 +181,24 @@ app.get("/scan_qr", function (req, res) {
   }
 
   res.render("pages/qrscanner");
+});
+
+
+// edit_events page
+app.get("/addusersmanual", function (req, res) {
+  if (!req.session.loggedin) {
+    res.redirect("/login");
+  }
+
+  var id = req.query.event;
+  console.log("working 1" + id);
+  db.collection("events").findOne({ session_name: id }, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    res.render("pages/add_users_manual", {
+      event: result,
+    });
+  });
 });
 
 //--------------------------------- POST ROUTES ----------------------------------------
