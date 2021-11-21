@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/users.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+
+    <title>User Search</title>
+</head>
+
+<body>
+  <%- include('../partials/nav_admin') %>
+    <!-- Search bar for finding user details at top of page -->
+    <div class="col-lg-12 col-md-6 users-logOut">
+      <button id="logoutBtn" type="button" onclick="window.location.href='/dologout'">
+        Log Out
+      </button>
+    </div>
+    <div class="searchBar">
+      <form action="/usersquery" method="get">
+        <input type="text" class="form-control" id="searchInput" name="searchInput" placeholder="Enter a name..." />
+        <button type="submit" class="btn btn-light" id="searchButton">
+          Search
+        </button>
+      </form>
+      <a href="/users"><button class="btn btn-light" id="searchButton">Clear</button></a>
+    </div>
+
+    <!-- Blocks containing contact details for searched users -->
+    <% users.forEach(function (user) { %>
+      <div class="userDetails">
+        <!-- The user's name in white, against a red background -->
+        <div class="userDetailsHeader">
+          <h1>
+            <%= user.firstname+" "+user.lastname %></h1>
+      </div>
+      <div class=" userDetailsBody">
+              <!-- Splitting the user details into 2 columns: labels and data -->
+              <div class="left-col">
+                <span>Postcode</span>
+                <span>Email</span>
+                <span>Emergency Contact</span>
+                <span>Emergency Contact No.</span>
+              </div>
+              <div class="right-col">
+                <span>
+                  <%= user.postcode %>
+                </span>
+                <span>
+                  <%= user.email %>
+                </span>
+                <span>
+                  <%= user.emergency.name %>
+                </span>
+                <span>
+                  <%= user.emergency.phonenumber %>
+                </span>
+              </div>
+        </div>
+      </div>
+      <% }); %>
+
+        <!-- JavaScripts and link to jquery CDN -->
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+        <script src="js/users.js"></script>
+</body>
+
+</html>
