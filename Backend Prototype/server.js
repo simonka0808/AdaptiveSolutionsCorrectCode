@@ -406,7 +406,7 @@ app.post("/editevent", function (req, res) {
 });
 
 app.post("/addtoevent", function (req, res) {
-  db.collection("event").find(
+  db.collection("events").find(
     { session_name: req.body.sessionname },
     function (err, current_session) {
       console.log(current_session);
