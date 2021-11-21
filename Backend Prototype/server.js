@@ -470,6 +470,8 @@ app.post("/dousermanualupdate", function (req, res) {
       // console.log(current_entry);
 
       // console.log(req.body.session_start_time);
+      console.log("This is the session name: "+req.body.current_session_name);
+
       var newvalues = {
         
 
