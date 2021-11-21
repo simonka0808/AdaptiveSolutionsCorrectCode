@@ -82,3 +82,7 @@
 .container-navbar h2 {
   color: white;
 }
+
+.users-logOut button{
+  float: right;
+}
