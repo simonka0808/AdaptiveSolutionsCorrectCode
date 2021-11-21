@@ -397,14 +397,18 @@ app.post("/editevent", function (req, res) {
   );
 });
 
-
 app.post("/addtoevent", function (req, res) {
-  db.collection("event").findOne()
-
-
-
+  db.collection("event").findOne(
+    { session_name: req.body.sessionname },
+    function (err, current_session) {
+      if (err) throw err;
+      current_session.user_signed_up.push(req.session.currentuser);
+      console.log(
+        req.session.currentuser + " added to " + req.body.sessionname
+      );
+    }
+  );
 });
-
 
 //Starts the server
 app.listen(8080);

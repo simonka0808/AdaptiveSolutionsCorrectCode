@@ -41,7 +41,8 @@
                 <div class="col">
                     
                     <form action="/addtoevent" method="POST">
-                    <button name="Attend Session" value="Attend Session">Attend Session</button>
+                        <input type="text" name="sessionname" value="<%= event.session.name %>" style="display: none">
+                    <button name="Attend Session" value="Attend Session" type="submit">Attend Session</button>
                     </form>
                     <!-- <button class="attend-button" type="button"><h5>Attend Session</h5></button> -->
                 </div>
