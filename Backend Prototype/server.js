@@ -491,7 +491,7 @@ app.post("/dousermanualupdate", function (req, res) {
       );
         }
       );
-      res.redirect("/add_users_manual");
+      res.redirect("/events_admin");
     });
 
 
