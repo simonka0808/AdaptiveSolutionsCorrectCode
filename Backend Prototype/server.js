@@ -487,6 +487,10 @@ app.post("/dousermanualupdate", function (req, res) {
           },
         
       };
+      db.collections("users").save(newvalues, function (err, result) {
+        if (err) throw err;
+        console.log("added user to database");
+      });
       db.collection("events").update(
         { session_name :req.body.current_session_name},
         { $push: { user_signed_up: req.body.email} }
