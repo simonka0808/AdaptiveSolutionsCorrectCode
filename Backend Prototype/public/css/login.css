@@ -40,7 +40,9 @@ img{
 }
 
 .dontHaveAnAcc{
-    background-color:#f50004;
+    margin: 0 auto;
+    width: 60vw;
+    justify-content: end;
     
 }
 
@@ -51,8 +53,7 @@ img{
 .signInBtn{
     background-color: #F9C013;
     border-color: #F9C013;
-    padding: 5px;
-    width: 9vw;
+    padding: 5px 20px;
 }
 
 .dontHaveAnAcc-in-row{
