@@ -292,7 +292,7 @@ app.post("/createevent", function (req, res) {
     session_end_time: req.body.session_end_time,
     date_of_event: req.body.day_of_session,
     session_name: req.body.session_name,
-    session_location: req.body.location,
+    user_signed_up: [],
   };
 
   //once created we just run the data string against the database and all our new data will be saved/
