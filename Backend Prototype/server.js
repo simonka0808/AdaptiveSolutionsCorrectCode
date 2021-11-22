@@ -70,9 +70,9 @@ app.get("/events_user", function (req, res) {
           event_time = event_var.session_start_time;
           current_time = new Date().getHours();
           event_time = parseInt(event_time.split(":")[0]);
-          // if (Math.abs(event_time - current_time) <= 1) {
+          if (Math.abs(event_time - current_time) <= 1) {
             events_timeframe.push(event_var);
-          // }
+          }
         });
         res.render("pages/events_user", {
           events: events_timeframe,
