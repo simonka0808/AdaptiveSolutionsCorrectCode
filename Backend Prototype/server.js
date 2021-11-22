@@ -420,7 +420,7 @@ app.post("/editevent", function (req, res) {
         $set: {
           session_start_time: req.body.session_start_time,
           session_end_time: req.body.session_end_time,
-          date_of_event: req.body.day_of_session,
+          date_of_event: req.body.date_of_event,
           session_name: req.body.session_name,
         },
       };
