@@ -1,37 +1,49 @@
-body{
+body {
     background-color: white;
 }
-.login-logo img{
-    max-width:70%;
+
+.login-logo img {
+    max-width: 70%;
     height: auto;
 }
-.create-events-container{
+
+.create-events-container {
     width: 100%;
 }
 
-.create-events-row{
+.create-events-row {
     margin: 0 auto;
     max-width: 1200px;
     background-color: white;
     border-radius: 25px;
-    
+
 }
-.create-events-row #registerForm{
+
+.create-events-row #registerForm {
     padding: 60px;
     border-style: solid;
     margin-top: 60px;
 }
 
-.create-session-btn{
+.create-session-btn {
     text-align: center;
     margin-top: 40px;
 }
 
-#createSession{
+#deleteSession {
+    background-color: #f50004;
+    border-color: #f50004;
+    padding: 7px 20px;
+    border-radius: 6px;
+    color: white;
+}
+
+#createSession {
     background-color: #F9C013;
     border-color: #F9C013;
-    padding: 11px 30px;
+    padding: 7px 20px;
     border-radius: 6px;
+    color: white;
 }
 
 @media screen and (max-width:768px) {
@@ -42,13 +54,13 @@ body{
 
 }
 
-@media screen and (max-width: 600px){
-    .create-events-row{
+@media screen and (max-width: 600px) {
+    .create-events-row {
         max-width: unset;
     }
 
-    #create_event{
+    #create_event {
         margin-top: 35px;
     }
-    
+
 }

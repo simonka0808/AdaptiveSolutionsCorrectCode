@@ -70,9 +70,9 @@ app.get("/events_user", function (req, res) {
           event_time = event_var.session_start_time;
           current_time = new Date().getHours();
           event_time = parseInt(event_time.split(":")[0]);
-          // if (Math.abs(event_time - current_time) <= 1) {
-          events_timeframe.push(event_var);
-          // }
+          if (Math.abs(event_time - current_time) <= 1) {
+            events_timeframe.push(event_var);
+          }
         });
         res.render("pages/events_user", {
           events: events_timeframe,
@@ -203,7 +203,7 @@ app.get("/addusersmanual", function (req, res) {
 });
 
 app.get("/userslist", function(req, res) {
-  var email = req.query.email;
+  var email = req.query.email.split(",");
   console.log(email);
   if(req.session.isadmin){
     db.collection("users")
