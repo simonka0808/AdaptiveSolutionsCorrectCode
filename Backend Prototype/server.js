@@ -452,7 +452,7 @@ app.post("/addtoevent", function (req, res) {
       theUser = req.session.currentuser;
       console.log(theUser);
       db.collection("events").update(
-        { email: current_session[0].email },
+        { session_name: current_session[0].session_name },
         { $push: { user_signed_up: theUser } }
       );
       // current_session[0].user_signed_up.$push:{req.session.currentuser};
